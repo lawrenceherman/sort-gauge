@@ -13,7 +13,8 @@
 		FEF52B0F219BAB19002FCBCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF52B0E219BAB19002FCBCF /* Assets.xcassets */; };
 		FEF52B12219BAB19002FCBCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEF52B10219BAB19002FCBCF /* LaunchScreen.storyboard */; };
 		FEF52B1A219BAB28002FCBCF /* mergesort.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF52B19219BAB28002FCBCF /* mergesort.swift */; };
-		FEF52B1C219BAB81002FCBCF /* linkedlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF52B1B219BAB81002FCBCF /* linkedlist.swift */; };
+		FEF52B1C219BAB81002FCBCF /* DoublyLL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF52B1B219BAB81002FCBCF /* DoublyLL.swift */; };
+		FEF52B1E219C3CB0002FCBCF /* SinglyLL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF52B1D219C3CB0002FCBCF /* SinglyLL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +26,8 @@
 		FEF52B11219BAB19002FCBCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEF52B13219BAB19002FCBCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEF52B19219BAB28002FCBCF /* mergesort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mergesort.swift; sourceTree = "<group>"; };
-		FEF52B1B219BAB81002FCBCF /* linkedlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = linkedlist.swift; sourceTree = "<group>"; };
+		FEF52B1B219BAB81002FCBCF /* DoublyLL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublyLL.swift; sourceTree = "<group>"; };
+		FEF52B1D219C3CB0002FCBCF /* SinglyLL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglyLL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +67,8 @@
 				FEF52B10219BAB19002FCBCF /* LaunchScreen.storyboard */,
 				FEF52B13219BAB19002FCBCF /* Info.plist */,
 				FEF52B19219BAB28002FCBCF /* mergesort.swift */,
-				FEF52B1B219BAB81002FCBCF /* linkedlist.swift */,
+				FEF52B1B219BAB81002FCBCF /* DoublyLL.swift */,
+				FEF52B1D219C3CB0002FCBCF /* SinglyLL.swift */,
 			);
 			path = sort;
 			sourceTree = "<group>";
@@ -141,9 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF52B1E219C3CB0002FCBCF /* SinglyLL.swift in Sources */,
 				FEF52B0A219BAB19002FCBCF /* ViewController.swift in Sources */,
 				FEF52B1A219BAB28002FCBCF /* mergesort.swift in Sources */,
-				FEF52B1C219BAB81002FCBCF /* linkedlist.swift in Sources */,
+				FEF52B1C219BAB81002FCBCF /* DoublyLL.swift in Sources */,
 				FEF52B08219BAB19002FCBCF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
