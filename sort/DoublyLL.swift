@@ -16,44 +16,42 @@ class DoublyLL {
   var tail: DoublyLLNode?
   
 
-  //swift term
+ // swift term // make generic
   func append(value :Int) {
-    let newNode = DoublyLLNode(value: value)
-    
-    if let head = head {
-      var currentNode = head
-      while currentNode.next != nil {
-        
-        
-      }
-      
-      
-      
-    } else {
-      
-       head = newNode
-      
-      
-    }
-    
-    
 
-  
-  
-  
-  
-  
+    let newNode = DoublyLLNode(value: value)
+
+    if let tempHead = head {
+
+      while tempHead.next != nil {
+
+
+
+
+
+      }
+
+      head?.next = newNode
+      newNode.previous = head
+
+
+
+    } else {
+
+       head = newNode
+
+
+    }
+
+
+//
   }
-  
+}
   
   // addFirst, addHead
-  func prepend(value: Int) {
-    
-    
-    
-    
-    
-  }
+//  func prepend(value: Int) {
+//
+//  }
   
   // remove(at: Int) -> Array<Element>.Element
   // removeFirst() -> Element
@@ -85,7 +83,7 @@ class DoublyLL {
 
 
 
-}
+//}
 
 class DoublyLLNode {
   
@@ -104,14 +102,14 @@ class DoublyLLNode {
 
 
 
-func createDoublyLLOfLength(length: Int) -> DoublyLL {
-  
-  
-  
-  
-  
-  
-  
-
-
-}
+//func createDoublyLLOfLength(length: Int) -> DoublyLL {
+//  
+//  
+//  
+//  
+//  
+//  
+//  
+//
+//
+//}

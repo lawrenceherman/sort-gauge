@@ -10,23 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  var first: Int?
+  var tempClass: TempClass?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    var x: [Int] = [2, 3]
-    
-    var y: Array<Int> = Array()
-    
-    
-    print(x.capacity)
-    
-    
-    
-    
-    print(x.hashValue)
+
+  
+  
+  
+  
+  
   
   }
 
 
+
+
+
+
+
 }
 
+
+class TempClass {
+  
+  var x = 1
+  
+  
+  
+}
