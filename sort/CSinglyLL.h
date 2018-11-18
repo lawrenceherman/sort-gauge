@@ -6,12 +6,12 @@
 //  Copyright © 2018 Lawrence Herman. All rights reserved.
 //
 
-#ifndef Ctest_h
-#define Ctest_h
+#ifndef CSinglyLL_h
+#define CSinglyLL_h
 
 #include <stdio.h>
 
-long factorial(int n);
+//long factorial(int n);
 
 
-#endif /* Ctest_h */
+#endif /* CSinglyLL_h */

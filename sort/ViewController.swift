@@ -10,24 +10,36 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  var first: Int?
-  var tempClass: TempClass?
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
-  
     let x = SinglyLL()
+    
+    
+    x.prepend(value: 4)
+    x.prepend(value: 8)
+    x.prepend(value: 12)
+    x.prepend(value: 10)
+    
+    x.printHeadToTail()
+    
+    x.append(value: 14)
+    x.append(value: 42)
+    x.append(value: 11)
+    x.append(value: 100)
+    
+    x.printHeadToTail()
 
-    x.append(value: 3)
-    x.append(value: 4)
-    x.append(value: 8)
+    print(x.tail?.value)
+//
+//    var y = Array<Int>()
+//    y.append(2)
+//    y.insert(3, at: 0)
+//    y.remove(at: 5)
 
-    print(x.printHeadToTail())
-  
-  print("Hello \(factorial(5))!")
-  
-  
+
   }
 
 

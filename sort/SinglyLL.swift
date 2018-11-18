@@ -8,64 +8,86 @@
 
 import Foundation
 
-
 class SinglyLL {
 
+  // first
   var head: SinglyLLNode?
+  // last
+  // this variable if not necessary if only want to use LL as a stack.  If want to use
+  // as a queue or if there is need to iterate over list from tail to head we need.
   var tail: SinglyLLNode?
-  
-  // so if you don't keep reference to last you wouldnt want to addLast due to O(n)
-  // basically a stack LIFO
-  
-  // with a last reference can also act like a queue. O(1)  FIFI
-
-  
-  // added and removed from same side = stack
-  // added and remove from different side = queue
  
-  var test: CInt = 0
-  // push on stack
+  // Could use either prepend/removeFromHead or append/removeFromTail as stack push/pop
+  // LIFO.  As long as use same side
+  
+  // addToHead, addFirst, push utilizing removeHead
+  func prepend(value: Int) {
+    let newNode = SinglyLLNode(value: value)
+    
+    //if head exists
+    if let cursorHead = head {
+      newNode.next = cursorHead
+      head = newNode
+    } else {
+      // if no head node becomes head and tail
+      head = newNode
+      tail = newNode
+    }
+  }
+  
+  // addToTail, addLast, push if utilizing removeTail
   func append(value: Int) {
     let newNode = SinglyLLNode(value: value)
     
-    if var nodeHolder = head {
-      
-      while nodeHolder.next != nil {
-        nodeHolder = nodeHolder.next!
-      }
-      
-      nodeHolder.next = newNode
-      
+    if let cursorTail = tail {
+      cursorTail.next = newNode
+      tail = newNode
     } else {
       head = newNode
+      tail = newNode
     }
+  }
+  
+  // removeFirst, pop
+  func removeHead() -> SinglyLLNode? {
     
-    
+    if let cursorHead = head {
+      head = cursorHead.next
+      
+      
+      return cursorHead
+    } else {
+      return nil
+    }
   }
   
   
+  
+  
+  
+  // addToTail, addLast, push
+  // Would not have this func if SinglyLL did not have the last property.  Having
+//  // to cycle over LL without it would cause O(n).
+//  func append(value: Int) {
+//    let newNode = SinglyLLNode(value: value)
+//
+//
+//
+//
+//
+//
+//  }
+  
   func printHeadToTail() {
     
-    if var head = head {
+    if var cursorHead = head {
+      print(cursorHead.value.debugDescription)
       
-    
-      
-      print(head.value)
-      
-      while head.next != nil {
-        head = head.next!
-        print(head.value)
+      while cursorHead.next != nil {
+        cursorHead = cursorHead.next!
+        print(cursorHead.value.debugDescription)
       }
-      
-      
-      
-      
-    
-    
     }
-    
-    
-    
   }
 
 //  func addLast(value: Int) {
