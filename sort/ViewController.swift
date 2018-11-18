@@ -17,9 +17,15 @@ class ViewController: UIViewController {
     super.viewDidLoad()
 
   
+    let x = SinglyLL()
+
+    x.append(value: 3)
+    x.append(value: 4)
+    x.append(value: 8)
+
+    print(x.printHeadToTail())
   
-  
-  
+  print("Hello \(factorial(5))!")
   
   
   }

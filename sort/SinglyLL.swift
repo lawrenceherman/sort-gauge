@@ -11,8 +11,8 @@ import Foundation
 
 class SinglyLL {
 
-  var first: SinglyLLNode?
-  var last: SinglyLLNode?
+  var head: SinglyLLNode?
+  var tail: SinglyLLNode?
   
   // so if you don't keep reference to last you wouldnt want to addLast due to O(n)
   // basically a stack LIFO
@@ -22,15 +22,48 @@ class SinglyLL {
   
   // added and removed from same side = stack
   // added and remove from different side = queue
-  class Test {
-  
-  }
-
-
+ 
+  var test: CInt = 0
   // push on stack
-  func addFirst(value: Int) {
+  func append(value: Int) {
+    let newNode = SinglyLLNode(value: value)
     
-    // if tail is nill
+    if var nodeHolder = head {
+      
+      while nodeHolder.next != nil {
+        nodeHolder = nodeHolder.next!
+      }
+      
+      nodeHolder.next = newNode
+      
+    } else {
+      head = newNode
+    }
+    
+    
+  }
+  
+  
+  func printHeadToTail() {
+    
+    if var head = head {
+      
+    
+      
+      print(head.value)
+      
+      while head.next != nil {
+        head = head.next!
+        print(head.value)
+      }
+      
+      
+      
+      
+    
+    
+    }
+    
     
     
   }
