@@ -53,13 +53,19 @@ class SinglyLL {
     
     if let cursorHead = head {
       head = cursorHead.next
-      
-      
+      // check for memory leak
       return cursorHead
+      
     } else {
       return nil
     }
   }
+  
+//  public var first: Node? {
+//    return head
+//  }
+  
+  
   
   
   
@@ -78,17 +84,25 @@ class SinglyLL {
 //
 //  }
   
+  
+  
   func printHeadToTail() {
     
     if var cursorHead = head {
-      print(cursorHead.value.debugDescription)
+      var i = 0
+      print(String(i) + " " + cursorHead.value.debugDescription)
       
+    
       while cursorHead.next != nil {
         cursorHead = cursorHead.next!
-        print(cursorHead.value.debugDescription)
+        i += 1
+        print(String(i) + " " + cursorHead.value.debugDescription)
+    
       }
     }
   }
+  
+  
 
 //  func addLast(value: Int) {
 //
@@ -130,8 +144,6 @@ class SinglyLLNode {
   init(value: Int) {
     self.value = value
   }
-  
-  
 }
 
 

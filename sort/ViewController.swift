@@ -10,29 +10,39 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  let singlyLL = SinglyLL()
 
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let x = SinglyLL()
-    
-    
-    x.prepend(value: 4)
-    x.prepend(value: 8)
-    x.prepend(value: 12)
-    x.prepend(value: 10)
-    
-    x.printHeadToTail()
-    
-    x.append(value: 14)
-    x.append(value: 42)
-    x.append(value: 11)
-    x.append(value: 100)
-    
-    x.printHeadToTail()
+//
+//
+//    x.prepend(value: 4)
+//    x.prepend(value: 8)
+//    x.prepend(value: 12)
+//    x.prepend(value: 10)
+//
+//
+//    x.append(value: 14)
+//    x.append(value: 42)
+//    x.append(value: 11)
+//    x.append(value: 100)
+//
+//    x.printHeadToTail()
+//
+//    let y = x.removeHead()
+//    print("    ")
+//    print(y?.value)
+//
+//    print("    ")
+//
+//    x.printHeadToTail()
 
-    print(x.tail?.value)
+
+    
+   
+    
 //
 //    var y = Array<Int>()
 //    y.append(2)
@@ -43,6 +53,30 @@ class ViewController: UIViewController {
   }
 
 
+  
+  override func viewDidAppear(_ animated: Bool) {
+    
+    for x in 0..<1_000_000 {
+      print(x)
+      singlyLL.append(value: Int.random(in: 0...100))
+      
+      
+    }
+    
+//    singlyLL.printHeadToTail()
+    
+    for x in 0..<1_000_000 {
+      print(x)
+      singlyLL.removeHead()
+    }
+  
+  
+  
+  
+  
+  
+  
+  }
 
 
 
