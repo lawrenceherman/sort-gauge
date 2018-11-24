@@ -10,8 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  let singlyLL = SinglyLL()
-
+  var singlyLL: SinglyLL!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -56,25 +55,38 @@ class ViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     
-    for x in 0..<1_000_000 {
-      print(x)
-      singlyLL.append(value: Int.random(in: 0...100))
+    singlyLL = SinglyLL()
+    
+    for x in 0..<1_000 {
+//      print(x)
+      singlyLL.append(value: x)
       
       
     }
     
-//    singlyLL.printHeadToTail()
     
-    for x in 0..<1_000_000 {
-      print(x)
-      singlyLL.removeHead()
-    }
+    singlyLL = nil
+
+    
+//    for _ in 0..<1_000 {
+////      print(x)
+////      guard let x = singlyLL.popHead() else { return }
+////      print(x.value!)
+////
+//
+//
+//
+//
+//    }
   
   
+    print("finished")
+
+    
+    
   
-  
-  
-  
+    
+    
   
   }
 
@@ -85,10 +97,3 @@ class ViewController: UIViewController {
 }
 
 
-class TempClass {
-  
-  var x = 1
-  
-  
-  
-}

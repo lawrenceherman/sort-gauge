@@ -25,8 +25,8 @@ class SinglyLL {
     let newNode = SinglyLLNode(value: value)
     
     //if head exists
-    if let cursorHead = head {
-      newNode.next = cursorHead
+    if let headNode = head {
+      newNode.next = headNode
       head = newNode
     } else {
       // if no head node becomes head and tail
@@ -39,27 +39,41 @@ class SinglyLL {
   func append(value: Int) {
     let newNode = SinglyLLNode(value: value)
     
-    if let cursorTail = tail {
-      cursorTail.next = newNode
-      tail = newNode
+    if let tailNode = tail {
+      tailNode.next = newNode
     } else {
       head = newNode
-      tail = newNode
     }
+  
+    tail = newNode
+
   }
   
-  // removeFirst, pop
-  func removeHead() -> SinglyLLNode? {
+  // returnFirst, returnHead
+  func popHead() -> SinglyLLNode? {
     
-    if let cursorHead = head {
-      head = cursorHead.next
+    if let headNode = head {
+     
+      
+      head = headNode.next
+      
       // check for memory leak
-      return cursorHead
+      return headNode
       
     } else {
       return nil
     }
+  
   }
+  
+  
+  
+//  func nodeAt(index: Int) -> Node? {
+//
+//
+//
+//
+//  }
   
 //  public var first: Node? {
 //    return head
@@ -88,47 +102,59 @@ class SinglyLL {
   
   func printHeadToTail() {
     
-    if var cursorHead = head {
-      var i = 0
-      print(String(i) + " " + cursorHead.value.debugDescription)
+    if var headNode = head {
       
-    
-      while cursorHead.next != nil {
-        cursorHead = cursorHead.next!
-        i += 1
-        print(String(i) + " " + cursorHead.value.debugDescription)
-    
+      // fix. has to be a way not to dupe print here
+      print(headNode.value!)
+      while headNode.next != nil {
+        headNode = headNode.next!
+        print(headNode.value!)
       }
     }
   }
-  
-  
+//
+  func clearLL() {
 
-//  func addLast(value: Int) {
-//
-//
-//
-//
-//  }
- 
+    if head != nil {
+      
+      
+    
+      while head?.next != nil {
+        
+        
+      }
+
+      
+
+
+    }
+
+
+  }
   
-  // pop on stack
-//  func removeFirst() -> SinglyLLNode {
-//
-//
-//
-//
-//
-//
-//
+  //Stack protocol oriented approach
+  
+//  protocol Stackable {
+//    associatedtype Element
+//    mutating func push(_ element: Element)
+//    func peek() -> Element?
+//    mutating func pop() -> Element?
+//    mutating func removeAll()
 //  }
-//
-//  func removeLast() -> SinglyLLNode {
+  
+  // Linked list protocol implementation
+  
+//  protocol Linkable {
+//    associatedtype D
+//    var value: D { get }
+//    var next: Self? { get set }
+//    var previous: Self? { get set }
 //    
-//    
-//    
-//    
+//    init(value: D)
 //  }
+//  
+
+
 
 
 
@@ -143,7 +169,15 @@ class SinglyLLNode {
   
   init(value: Int) {
     self.value = value
+//    print("init \(value)")
+  
   }
+  
+  deinit {
+    print("deinit \(String(describing: value))")
+  }
+
+
 }
 
 
