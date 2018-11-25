@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FED0B75021AA124B005A4380 /* Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0B74F21AA124B005A4380 /* Tester.swift */; };
 		FEF52B08219BAB19002FCBCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF52B07219BAB19002FCBCF /* AppDelegate.swift */; };
 		FEF52B0A219BAB19002FCBCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF52B09219BAB19002FCBCF /* ViewController.swift */; };
 		FEF52B0F219BAB19002FCBCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF52B0E219BAB19002FCBCF /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FED0B74F21AA124B005A4380 /* Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tester.swift; sourceTree = "<group>"; };
 		FEF52B04219BAB19002FCBCF /* sort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF52B07219BAB19002FCBCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEF52B09219BAB19002FCBCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,10 +71,11 @@
 				FEF52B13219BAB19002FCBCF /* Info.plist */,
 				FEF52B19219BAB28002FCBCF /* mergesort.swift */,
 				FEF52B1B219BAB81002FCBCF /* DoublyLL.swift */,
-				FEF52B1D219C3CB0002FCBCF /* SinglyLL.swift */,
 				FEFC7DCB21A0D8F800924C15 /* CSinglyLL.h */,
 				FEFC7DCC21A0D8F800924C15 /* CSinglyLL.c */,
 				FEFC7DCA21A0D8F700924C15 /* sort-Bridging-Header.h */,
+				FEF52B1D219C3CB0002FCBCF /* SinglyLL.swift */,
+				FED0B74F21AA124B005A4380 /* Tester.swift */,
 			);
 			path = sort;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				FEFC7DCD21A0D8F800924C15 /* CSinglyLL.c in Sources */,
 				FEF52B1C219BAB81002FCBCF /* DoublyLL.swift in Sources */,
 				FEF52B08219BAB19002FCBCF /* AppDelegate.swift in Sources */,
+				FED0B75021AA124B005A4380 /* Tester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

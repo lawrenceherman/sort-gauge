@@ -27,12 +27,14 @@ class SinglyLL {
     //if head exists
     if let headNode = head {
       newNode.next = headNode
-      head = newNode
     } else {
       // if no head node becomes head and tail
-      head = newNode
       tail = newNode
     }
+  
+    head = newNode
+
+  
   }
   
   // addToTail, addLast, push if utilizing removeTail
@@ -53,8 +55,7 @@ class SinglyLL {
   func popHead() -> SinglyLLNode? {
     
     if let headNode = head {
-     
-      
+
       head = headNode.next
       
       // check for memory leak
@@ -113,24 +114,24 @@ class SinglyLL {
     }
   }
 //
-  func clearLL() {
+//  func clearLL() {
+//
+//    if head != nil {
+//
+//
+//
+//      while head?.next != nil {
+//
+//
+//      }
+//
+//
+//
+//
+//    }
+//
 
-    if head != nil {
-      
-      
-    
-      while head?.next != nil {
-        
-        
-      }
-
-      
-
-
-    }
-
-
-  }
+//  }
   
   //Stack protocol oriented approach
   
