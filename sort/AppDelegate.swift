@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-  var tester: Tester?
+//  var tester: Tester?
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -23,27 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let launchVC = ViewController()
     window?.rootViewController = launchVC
-    
-    tester = Tester(completionHandler: nilTester)
-    
   
-    
-    
-    
+  
     return true
-  
-  
-  
-  
+
   
   }
   
-  func nilTester() {
-    
-    tester = nil
-
-
-  }
+  
   
   
   func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {

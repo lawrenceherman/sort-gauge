@@ -11,18 +11,24 @@ import UIKit
 class ViewController: UIViewController {
 
 //  var singlyLL: SinglyLL!
-//  var tester: Tester!
+  var tester: Tester!
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
 
 
+     tester = Tester(completionHandler: nilTester)
+
+
+  }
+  
+  func nilTester() {
     
-   
-
-
-
+    print("nil tester")
+    
+    
+    
   }
 
 

@@ -15,7 +15,7 @@ class Tester {
   var singlyLL: SinglyLL!
   
   
-  init(completionHandler: @escaping ()->()) {
+  init(completionHandler: ()->()) {
     
     singlyLL = SinglyLL()
     
@@ -25,6 +25,12 @@ class Tester {
       singlyLL.append(value: x)
       
       
+    }
+    
+    let testQueue = DispatchQueue.init(label: "test queue", qos: .background, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
+    
+    testQueue.async {
+      self.singlyLL = nil
     }
     
     completionHandler()
