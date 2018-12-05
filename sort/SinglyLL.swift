@@ -9,16 +9,23 @@
 import Foundation
 
 class SinglyLL {
-
+  
   // first
   var head: SinglyLLNode?
-  // last
+
+
+
   // this variable if not necessary if only want to use LL as a stack.  If want to use
   // as a queue or if there is need to iterate over list from tail to head we need.
+  // last
   var tail: SinglyLLNode?
- 
+  
   // Could use either prepend/removeFromHead or append/removeFromTail as stack push/pop
   // LIFO.  As long as use same side
+  
+  deinit {
+    print("singlyLL deinit")
+  }
   
   // addToHead, addFirst, push utilizing removeHead
   func prepend(value: Int) {
@@ -31,10 +38,9 @@ class SinglyLL {
       // if no head node becomes head and tail
       tail = newNode
     }
-  
+    
     head = newNode
 
-  
   }
   
   // addToTail, addLast, push if utilizing removeTail
@@ -46,16 +52,16 @@ class SinglyLL {
     } else {
       head = newNode
     }
-  
+    
     tail = newNode
-
+    
   }
   
   // returnFirst, returnHead
   func popHead() -> SinglyLLNode? {
     
     if let headNode = head {
-
+      
       head = headNode.next
       
       // check for memory leak
@@ -64,21 +70,21 @@ class SinglyLL {
     } else {
       return nil
     }
-  
+    
   }
   
   
   
-//  func nodeAt(index: Int) -> Node? {
-//
-//
-//
-//
-//  }
+  //  func nodeAt(index: Int) -> Node? {
+  //
+  //
+  //
+  //
+  //  }
   
-//  public var first: Node? {
-//    return head
-//  }
+  //  public var first: Node? {
+  //    return head
+  //  }
   
   
   
@@ -88,16 +94,16 @@ class SinglyLL {
   
   // addToTail, addLast, push
   // Would not have this func if SinglyLL did not have the last property.  Having
-//  // to cycle over LL without it would cause O(n).
-//  func append(value: Int) {
-//    let newNode = SinglyLLNode(value: value)
-//
-//
-//
-//
-//
-//
-//  }
+  //  // to cycle over LL without it would cause O(n).
+  //  func append(value: Int) {
+  //    let newNode = SinglyLLNode(value: value)
+  //
+  //
+  //
+  //
+  //
+  //
+  //  }
   
   
   
@@ -113,53 +119,53 @@ class SinglyLL {
       }
     }
   }
-//
-//  func clearLL() {
-//
-//    if head != nil {
-//
-//
-//
-//      while head?.next != nil {
-//
-//
-//      }
-//
-//
-//
-//
-//    }
-//
-
-//  }
+  //
+  //  func clearLL() {
+  //
+  //    if head != nil {
+  //
+  //
+  //
+  //      while head?.next != nil {
+  //
+  //
+  //      }
+  //
+  //
+  //
+  //
+  //    }
+  //
+  
+  //  }
   
   //Stack protocol oriented approach
   
-//  protocol Stackable {
-//    associatedtype Element
-//    mutating func push(_ element: Element)
-//    func peek() -> Element?
-//    mutating func pop() -> Element?
-//    mutating func removeAll()
-//  }
+  //  protocol Stackable {
+  //    associatedtype Element
+  //    mutating func push(_ element: Element)
+  //    func peek() -> Element?
+  //    mutating func pop() -> Element?
+  //    mutating func removeAll()
+  //  }
   
   // Linked list protocol implementation
   
-//  protocol Linkable {
-//    associatedtype D
-//    var value: D { get }
-//    var next: Self? { get set }
-//    var previous: Self? { get set }
-//    
-//    init(value: D)
-//  }
-//  
-
-
-
-
-
-
+  //  protocol Linkable {
+  //    associatedtype D
+  //    var value: D { get }
+  //    var next: Self? { get set }
+  //    var previous: Self? { get set }
+  //
+  //    init(value: D)
+  //  }
+  //
+  
+  
+  
+  
+  
+  
 }
 
 
@@ -170,18 +176,25 @@ class SinglyLLNode {
   
   init(value: Int) {
     self.value = value
-//    print("init \(value)")
-  
+    //    print("init \(value)")
+    
   }
   
   deinit {
+    
+    
+    
+    
     print("deinit \(String(describing: value))")
+ 
+  
+  
   }
-
-
+  
+  
 }
 
 
-  
+
 
 

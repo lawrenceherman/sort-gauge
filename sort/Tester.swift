@@ -12,26 +12,30 @@ import Foundation
 class Tester {
   
   
-  var singlyLL: SinglyLL!
+  var singlyLL: SinglyLL! {
+    willSet {
+      print("singlyLL willset")
+    }
+    
+    
+  }
   
   
   init(completionHandler: ()->()) {
     
     singlyLL = SinglyLL()
     
-    for x in 0..<1_000_000 {
-      //      print(x)
+    for x in 0..<100_000 {
+      //print(x)
       print("init \(x)")
       singlyLL.append(value: x)
       
       
     }
     
-    let testQueue = DispatchQueue.init(label: "test queue", qos: .background, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
+
     
-    testQueue.async {
-      self.singlyLL = nil
-    }
+    
     
     completionHandler()
   
