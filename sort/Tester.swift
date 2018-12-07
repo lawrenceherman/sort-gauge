@@ -25,7 +25,7 @@ class Tester {
     
     singlyLL = SinglyLL()
     
-    for x in 0..<100_000 {
+    for x in 0..<1_000_000 {
       //print(x)
       print("init \(x)")
       singlyLL.append(value: x)
@@ -46,12 +46,6 @@ class Tester {
   deinit {
     print("Tester deinit")
   }
-  
-  
-  
-  
-  
-  
   
   
   

@@ -49,15 +49,16 @@ class ViewController: UIViewController {
     
     print("nil tester")
     
-//    let testQueue = DispatchQueue.init(label: "test queue", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
+    let testQueue = DispatchQueue.init(label: "test queue", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
+
+    testQueue.async {
+      self.tester = nil
+
+    }
+
 //
-//    testQueue.async {
-//      self.tester = nil
-//
-//    }
-//
+//    tester = nil
     
-    tester = nil
     
     
     //    tester = nil
@@ -67,6 +68,9 @@ class ViewController: UIViewController {
   func empty() {
     
     
+  
+  
+  
   }
   
   
