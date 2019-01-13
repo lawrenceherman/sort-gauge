@@ -20,9 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
     window = UIWindow()
     window?.makeKeyAndVisible()
-    
-    let launchVC = ViewController()
-    window?.rootViewController = launchVC
+    window?.rootViewController = TabBarVC()
   
   
     return true

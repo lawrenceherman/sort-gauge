@@ -8,29 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FirstTabVC: UIViewController {
   
   //  var singlyLL: SinglyLL!
   var tester: Tester!
   
-  let testButton: UIButton = {
-    let button = UIButton()
-    
-    
-    button.backgroundColor = .white
-    button.setTitleColor(.black, for: .normal)
-    button.setTitle("Test", for: .normal)
-    button.translatesAutoresizingMaskIntoConstraints = false
-    
-    
-    
-    
-    return button
-  }()
+  var firstTabView = FirstTabView()
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    print("FirstTabVC view did load")
     
     view.backgroundColor = .red
     
@@ -45,6 +33,19 @@ class ViewController: UIViewController {
     
   }
   
+  
+  override func loadView() {
+    print("FirstTabVC loadView")
+    
+    self.view = firstTabView
+    
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    print("FirstTabVC viewWillAppear")
+  }
+ 
+  
   @objc func nilTester() {
     
     print("nil tester")
@@ -56,12 +57,7 @@ class ViewController: UIViewController {
 
     }
 
-//
-//    tester = nil
-    
-    
-    
-    //    tester = nil
+
     
   }
   
@@ -77,7 +73,7 @@ class ViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     
     
-    tester = Tester(completionHandler: empty)
+//    tester = Tester(completionHandler: empty)
     
     
     
