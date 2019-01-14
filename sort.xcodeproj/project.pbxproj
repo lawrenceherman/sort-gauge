@@ -50,9 +50,9 @@
 		FE966BE721EA496500229E74 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FE966BE321EA433100229E74 /* TabBarVC.swift */,
 				FEF52B09219BAB19002FCBCF /* FirstTabVC.swift */,
 				FE966BE521EA456200229E74 /* SecondTabVC.swift */,
+				FE966BE321EA433100229E74 /* TabBarVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

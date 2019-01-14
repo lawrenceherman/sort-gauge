@@ -20,26 +20,27 @@ class FirstTabVC: UIViewController {
     super.viewDidLoad()
     print("FirstTabVC view did load")
     
-    view.backgroundColor = .red
-    
-    view.addSubview(testButton)
-    
-    testButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    testButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    testButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-    testButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2).isActive = true
-    
-    testButton.addTarget(self, action: #selector(nilTester), for: .touchUpInside)
-    
+  
   }
   
   
   override func loadView() {
     print("FirstTabVC loadView")
     
-    self.view = firstTabView
+    view = firstTabView
     
+//    view.backgroundColor = .brown
+
+    
+    
+    
+  
+  
+  
+  
   }
+  
+
   
   override func viewWillAppear(_ animated: Bool) {
     print("FirstTabVC viewWillAppear")
@@ -48,15 +49,15 @@ class FirstTabVC: UIViewController {
   
   @objc func nilTester() {
     
-    print("nil tester")
-    
-    let testQueue = DispatchQueue.init(label: "test queue", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
-
-    testQueue.async {
-      self.tester = nil
-
-    }
-
+//    print("nil tester")
+//
+//    let testQueue = DispatchQueue.init(label: "test queue", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
+//
+//    testQueue.async {
+//      self.tester = nil
+//
+//    }
+//
 
     
   }
