@@ -14,18 +14,22 @@ class FirstTabVC: UIViewController {
   var tester: Tester!
   
   var firstTabView = FirstTabView()
-  
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
     print("FirstTabVC view did load")
     
+    navigationController?.navigationBar.isTranslucent = false
   
   }
   
   
   override func loadView() {
     print("FirstTabVC loadView")
+    
+
+
     
     view = firstTabView
     
