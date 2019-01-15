@@ -9,7 +9,19 @@
 import UIKit
 class FirstTabView: UIView {
   
-  let testButton: UIButton = {
+  let nTextField: UITextField = {
+    let textField = UITextField()
+    textField.backgroundColor = .purple
+    textField.keyboardType = .decimalPad
+    textField.minimumFontSize = 10
+    textField.font = UIFont(name: "Times", size: 30.0)
+    textField.adjustsFontSizeToFitWidth = false
+    
+    return textField
+    
+  }()
+  
+  let generateDSButton: UIButton = {
     let button = UIButton()
     button.backgroundColor = .purple
     button.setTitleColor(.black, for: .normal)
@@ -17,7 +29,7 @@ class FirstTabView: UIView {
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
-
+  
   let linkedListContainerView: UIView = {
     let view = UIView()
     view.backgroundColor = .white
@@ -27,7 +39,18 @@ class FirstTabView: UIView {
   let linkedListLabel: UILabel = {
     let label = UILabel()
     label.text = "Linked List"
+    label.textAlignment = .center
     return label
+  }()
+  
+  
+  let linkedListSC: UISegmentedControl = {
+    let segementedControl = UISegmentedControl(items: ["Singly", "Doubly"])
+    segementedControl.selectedSegmentIndex = 0
+    
+    
+    
+    return segementedControl
   }()
   
   let arrayContainerView: UIView = {
@@ -40,34 +63,10 @@ class FirstTabView: UIView {
   let arrayLabel: UILabel = {
     let label = UILabel()
     label.text = "Array"
+    label.textAlignment = .center
     return label
   }()
   
-//
-//  let stackView: UIStackView = {
-//    let stackView = UIStackView()
-//
-//    stackView.backgroundColor = .red
-//
-//
-//
-//
-//    return stackView
-//  }()
-
-  
-  
-  let textField: UITextField = {
-    let textField = UITextField()
-    textField.backgroundColor = .purple
-    textField.keyboardType = .decimalPad
-    textField.minimumFontSize = 10
-    textField.font = UIFont(name: "Times", size: 30.0)
-    textField.adjustsFontSizeToFitWidth = false
-    
-    return textField
-    
-  }()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -77,7 +76,7 @@ class FirstTabView: UIView {
     setConstraints()
     
     backgroundColor = .brown
-//    testButton.addTarget(self, action: #selector(nilTester), for: .touchUpInside)
+
     
     
     
@@ -85,33 +84,30 @@ class FirstTabView: UIView {
   
   func addSubviews() {
     
-    addSubview(textField)
+    addSubview(nTextField)
 //    addSubview(stackView)
     
     addSubview(linkedListContainerView)
     linkedListContainerView.addSubview(linkedListLabel)
-    
+    linkedListContainerView.addSubview(linkedListSC)
     
     
     addSubview(arrayContainerView)
     arrayContainerView.addSubview(arrayLabel)
-//
-//    stackView.addArrangedSubview(testButton)
-//    stackView.addArrangedSubview(textField)
+    addSubview(generateDSButton)
   }
   
   func setConstraints() {
-    //
-    textField.translatesAutoresizingMaskIntoConstraints = false
-    textField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    //    textField.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-    textField.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 5.0).isActive = true
-    textField.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
-    textField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.15).isActive = true
+
+    nTextField.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 5.0).isActive = true
+    nTextField.translatesAutoresizingMaskIntoConstraints = false
+    nTextField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    nTextField.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
+    nTextField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.15).isActive = true
     
     linkedListContainerView.translatesAutoresizingMaskIntoConstraints = false
     linkedListContainerView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    linkedListContainerView.topAnchor.constraint(equalToSystemSpacingBelow: textField.bottomAnchor, multiplier: 5.0).isActive = true
+    linkedListContainerView.topAnchor.constraint(equalToSystemSpacingBelow: nTextField.bottomAnchor, multiplier: 5.0).isActive = true
     linkedListContainerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1.0).isActive = true
     linkedListContainerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2).isActive = true
     
@@ -120,6 +116,11 @@ class FirstTabView: UIView {
     linkedListLabel.topAnchor.constraint(equalToSystemSpacingBelow: linkedListContainerView.topAnchor, multiplier: 3.0).isActive = true
     linkedListLabel.widthAnchor.constraint(equalTo: linkedListContainerView.widthAnchor, multiplier: 0.5).isActive = true
     linkedListLabel.heightAnchor.constraint(equalTo: linkedListContainerView.heightAnchor, multiplier: 0.2).isActive = true
+    
+    linkedListSC.translatesAutoresizingMaskIntoConstraints = false
+    linkedListSC.topAnchor.constraint(equalToSystemSpacingBelow: linkedListLabel.bottomAnchor, multiplier: 3.0).isActive = true
+    linkedListSC.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    linkedListSC.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6).isActive = true
     
     
     arrayContainerView.translatesAutoresizingMaskIntoConstraints = false
@@ -133,22 +134,13 @@ class FirstTabView: UIView {
     arrayLabel.topAnchor.constraint(equalToSystemSpacingBelow: arrayContainerView.topAnchor, multiplier: 3.0).isActive = true
     arrayLabel.widthAnchor.constraint(equalTo: arrayContainerView.widthAnchor, multiplier: 0.5).isActive = true
     arrayLabel.heightAnchor.constraint(equalTo: arrayContainerView.heightAnchor, multiplier: 0.2).isActive = true
-    //
-////
-//    stackView.translatesAutoresizingMaskIntoConstraints = false
-//    stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-//    stackView.topAnchor.constraint(equalToSystemSpacingBelow: textField.bottomAnchor, multiplier: 1.0).isActive = true
-//    //    stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-//    stackView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-//    stackView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2).isActive = true
-//
     
     
-//    testButton.translatesAutoresizingMaskIntoConstraints = false
-//    testButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-//    testButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-//    testButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
-//    testButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2).isActive = true
+    generateDSButton.translatesAutoresizingMaskIntoConstraints = false
+    generateDSButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    generateDSButton.topAnchor.constraint(equalToSystemSpacingBelow: arrayContainerView.bottomAnchor, multiplier: 3.0).isActive = true
+    generateDSButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
+    generateDSButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1).isActive = true
     
     
     

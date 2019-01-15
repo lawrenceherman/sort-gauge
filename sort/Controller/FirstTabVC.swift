@@ -13,76 +13,70 @@ class FirstTabVC: UIViewController {
   //  var singlyLL: SinglyLL!
   var tester: Tester!
   
-  var firstTabView = FirstTabView()
-
+  var ftView = FirstTabView()
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
     print("FirstTabVC view did load")
     
     navigationController?.navigationBar.isTranslucent = false
-  
+    
+    ftView.generateDSButton.addTarget(self, action: #selector(generateDS), for: .touchUpInside)
+    
   }
   
   
   override func loadView() {
     print("FirstTabVC loadView")
     
-
-
-    
-    view = firstTabView
-    
-//    view.backgroundColor = .brown
-
-    
-    
-    
-  
-  
-  
-  
+    view = ftView
   }
   
-
+  
   
   override func viewWillAppear(_ animated: Bool) {
     print("FirstTabVC viewWillAppear")
   }
- 
   
-  @objc func nilTester() {
+  
+  @objc func generateDS() {
     
-//    print("nil tester")
-//
-//    let testQueue = DispatchQueue.init(label: "test queue", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
-//
-//    testQueue.async {
-//      self.tester = nil
-//
-//    }
-//
-
+    print("generateDS")
+    
+    let x = Int(ftView.nTextField.text!)
+    print(x)
+  
+    
+    
+    
+    
+    
+    //
+    //    let testQueue = DispatchQueue.init(label: "test queue", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
+    //
+    //    testQueue.async {
+    //      self.tester = nil
+    //
+    //    }
+    //
+    
     
   }
   
   func empty() {
     
     
-  
-  
-  
+    
+    
+    
   }
   
   
   override func viewDidAppear(_ animated: Bool) {
     
     
-//    tester = Tester(completionHandler: empty)
-    
-    
-    
-    
+    //    tester = Tester(completionHandler: empty)
     
     //    tester = Tester()
     
@@ -116,20 +110,9 @@ class FirstTabVC: UIViewController {
     //
     //
     //    }
-    
-    
-    
-    
-    
-    
-    
-    
+
   }
-  
-  
-  
-  
-  
+
 }
 
 
