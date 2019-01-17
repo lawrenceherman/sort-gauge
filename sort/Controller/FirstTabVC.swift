@@ -10,8 +10,8 @@ import UIKit
 
 class FirstTabVC: UIViewController {
   
-  //  var singlyLL: SinglyLL!
-  var tester: Tester!
+  var singlyLL = SinglyLL()
+//  var tester: Tester!
   
   var ftView = FirstTabView()
   
@@ -24,6 +24,11 @@ class FirstTabVC: UIViewController {
     
     ftView.generateDSButton.addTarget(self, action: #selector(generateDS), for: .touchUpInside)
     
+    for node in singlyLL {
+      print(node.value!)
+    }
+ 
+  
   }
   
   
@@ -51,8 +56,8 @@ class FirstTabVC: UIViewController {
     // need to generate linked list that appends n times and measure
     // time of
     
-    let y = SinglyLL()
-    
+//    let y = SinglyLL()
+//
     
     
     

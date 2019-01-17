@@ -6,7 +6,7 @@
 //  Copyright © 2018 Lawrence Herman. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 
 
 class SinglyLLNode {
@@ -25,9 +25,58 @@ class SinglyLLNode {
   }
 }
 
+//To establish that a type you’ve created supports nondestructive iteration, add conformance to the Collection protocol.
+
+struct SinglyLinkedListIterator: IteratorProtocol {
+  
+  typealias Element = SinglyLLNode
+  
+  var currentHead: SinglyLLNode
+  
+  init(headNode: SinglyLLNode) {
+    currentHead = headNode
+  }
+  
+  mutating func next() -> SinglyLLNode? {
+    let node = currentHead
+    currentHead = currentHead.next!
+    return node
+
+    
+ 
+  
+ 
+  }
+  
+
+
+}
+
+extension SinglyLL: Sequence {
+  
+  
+  typealias Iterator = SinglyLinkedListIterator
+  
+//
+  func makeIterator() -> SinglyLL.Iterator {
+    return SinglyLinkedListIterator(headNode: head!)
+
+
+  }
+  
+//  func makeIterator() -> SinglyLinkedListIterator {
+//
+//
+//
+//
+//  }
+
+  
+}
+
 
 class SinglyLL {
-  
+
   // first
   var head: SinglyLLNode?
 
@@ -44,6 +93,8 @@ class SinglyLL {
   deinit {
     print("singlyLL deinit")
   }
+  
+
   
 
   //addToHead, addFirst, this is a push for utilizing removeHead/pop
@@ -172,11 +223,6 @@ class SinglyLL {
   //    init(value: D)
   //  }
   //
-  
-  
-  
-  
-  
   
 }
 
