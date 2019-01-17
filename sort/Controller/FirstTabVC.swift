@@ -48,11 +48,17 @@ class FirstTabVC: UIViewController {
     print(x)
   
     
+    // need to generate linked list that appends n times and measure
+    // time of
+    
+    let y = SinglyLL()
     
     
     
     
-    //
+    
+    
+    
     //    let testQueue = DispatchQueue.init(label: "test queue", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
     //
     //    testQueue.async {

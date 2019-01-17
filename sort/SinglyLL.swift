@@ -8,12 +8,28 @@
 
 import Foundation
 
+
+class SinglyLLNode {
+  
+  var value: Int?
+  var next: SinglyLLNode?
+  
+  init(value: Int) {
+    self.value = value
+    print("init \(value)")
+    
+  }
+  
+  deinit {
+    print("deinit \(String(describing: value))")
+  }
+}
+
+
 class SinglyLL {
   
   // first
   var head: SinglyLLNode?
-
-
 
   // this variable if not necessary if only want to use LL as a stack.  If want to use
   // as a queue or if there is need to iterate over list from tail to head we need.
@@ -23,57 +39,59 @@ class SinglyLL {
   // Could use either prepend/removeFromHead or append/removeFromTail as stack push/pop
   // LIFO.  As long as use same side
   
+  //peekhead, peektail?
+  
   deinit {
     print("singlyLL deinit")
   }
   
-  // addToHead, addFirst, push utilizing removeHead
+
+  //addToHead, addFirst, this is a push for utilizing removeHead/pop
   func prepend(value: Int) {
     let newNode = SinglyLLNode(value: value)
     
-    //if head exists
-    if let headNode = head {
-      newNode.next = headNode
+    if let currentHead = head {
+      newNode.next = currentHead
     } else {
-      // if no head node becomes head and tail
       tail = newNode
     }
     
     head = newNode
-
   }
   
-  // addToTail, addLast, push if utilizing removeTail
+  
+  //addToTail, addLast, this is a push for utilizing removeTail/pop
   func append(value: Int) {
+    
     let newNode = SinglyLLNode(value: value)
     
-    if let tailNode = tail {
-      tailNode.next = newNode
+    if let currentTail = tail {
+      currentTail.next = newNode
     } else {
       head = newNode
     }
     
     tail = newNode
-    
   }
+  
   
   // returnFirst, returnHead
-  func popHead() -> SinglyLLNode? {
-    
-    if let headNode = head {
-      
-      head = headNode.next
-      
-      // check for memory leak
-      return headNode
-      
-    } else {
-      return nil
-    }
-    
-  }
+//  func popHead() -> SinglyLLNode? {
+//
+//    if let headNode = head {
+//
+//      head = headNode.next
+//
+//      // check for memory leak
+//      return headNode
+//
+//    } else {
+//      return nil
+//    }
+//
+//  }
   
-  
+
   
   //  func nodeAt(index: Int) -> Node? {
   //
@@ -97,12 +115,6 @@ class SinglyLL {
   //  // to cycle over LL without it would cause O(n).
   //  func append(value: Int) {
   //    let newNode = SinglyLLNode(value: value)
-  //
-  //
-  //
-  //
-  //
-  //
   //  }
   
   
@@ -164,32 +176,6 @@ class SinglyLL {
   
   
   
-  
-  
-}
-
-
-class SinglyLLNode {
-  
-  var value: Int?
-  var next: SinglyLLNode?
-  
-  init(value: Int) {
-    self.value = value
-    //    print("init \(value)")
-    
-  }
-  
-  deinit {
-    
-    
-    
-    
-    print("deinit \(String(describing: value))")
- 
-  
-  
-  }
   
   
 }

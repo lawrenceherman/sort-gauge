@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 class FirstTabView: UIView {
   
   let nTextField: UITextField = {
@@ -16,10 +17,12 @@ class FirstTabView: UIView {
     textField.minimumFontSize = 10
     textField.font = UIFont(name: "Times", size: 30.0)
     textField.adjustsFontSizeToFitWidth = false
-    
     return textField
     
   }()
+  
+  
+  
   
   let generateDSButton: UIButton = {
     let button = UIButton()
@@ -47,9 +50,6 @@ class FirstTabView: UIView {
   let linkedListSC: UISegmentedControl = {
     let segementedControl = UISegmentedControl(items: ["Singly", "Doubly"])
     segementedControl.selectedSegmentIndex = 0
-    
-    
-    
     return segementedControl
   }()
   
