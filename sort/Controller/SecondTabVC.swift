@@ -19,9 +19,7 @@ class SecondTabVC: UIViewController {
     
   }
   
-  
-  
-  
+
   
   
 }

@@ -11,7 +11,7 @@ import UIKit
 class FirstTabVC: UIViewController {
   
   var singlyLL = SinglyLL<Int>()
-//  var tester: Tester!
+  //  var tester: Tester!
   
   var ftView = FirstTabView()
   
@@ -30,28 +30,20 @@ class FirstTabVC: UIViewController {
     singlyLL.append(15)
     singlyLL.append(20)
     
-    for node in singlyLL {
-      print(node.value)
-    }
-//
-//    print(singlyLL.head?.value)
-//    print(singlyLL.printHeadToTail())
-   
+
+  
     
-    
-    
-    
+
+//    // what exactly is subsequence. memory usage.
+//    print(x)
   
   }
   
   
   override func loadView() {
     print("FirstTabVC loadView")
-    
     view = ftView
   }
-  
-  
   
   override func viewWillAppear(_ animated: Bool) {
     print("FirstTabVC viewWillAppear")
@@ -59,43 +51,19 @@ class FirstTabVC: UIViewController {
   
   
   @objc func generateDS() {
-    
     print("generateDS")
     
-    let x = Int(ftView.nTextField.text!)
-    print(x)
-  
+//    let x = Int(ftView.nTextField.text!)
+//    print(x)
+    
     
     // need to generate linked list that appends n times and measure
     // time of
     
-//    let y = SinglyLL()
-//
-    
-    
-    
-    
-    
-    
-    //    let testQueue = DispatchQueue.init(label: "test queue", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
+    //    let y = SinglyLL()
     //
-    //    testQueue.async {
-    //      self.tester = nil
-    //
-    //    }
-    //
-    
-    
+
   }
-  
-  func empty() {
-    
-    
-    
-    
-    
-  }
-  
   
   override func viewDidAppear(_ animated: Bool) {
     
@@ -134,9 +102,9 @@ class FirstTabVC: UIViewController {
     //
     //
     //    }
-
+    
   }
-
+  
 }
 
 

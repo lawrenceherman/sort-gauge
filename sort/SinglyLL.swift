@@ -9,7 +9,7 @@
 //import Foundation
 
 
-class SinglyLLNode<T> {
+class SinglyLLNode<T: Comparable> {
   
   var value: T
   var next: SinglyLLNode?
@@ -17,7 +17,6 @@ class SinglyLLNode<T> {
   init(_ value: T) {
     self.value = value
     print("init \(value)")
-    
   }
   
   deinit {
@@ -25,66 +24,50 @@ class SinglyLLNode<T> {
   }
 }
 
+extension SinglyLLNode: Equatable {
+  static func == (lhs: SinglyLLNode<T>, rhs: SinglyLLNode<T>) -> Bool {
+    return lhs.value == rhs.value
+  }
+}
 
-struct SinglyLinkedListIterator<T>: IteratorProtocol {
+extension SinglyLLNode: Comparable {
+  static func < (lhs: SinglyLLNode<T>, rhs: SinglyLLNode<T>) -> Bool {
+    return lhs.value < rhs.value
+  }
+}
 
+
+struct SinglyLinkedListIterator<T: Comparable>: IteratorProtocol {
   typealias Element = SinglyLLNode<T>
-
+  
   var currentNode: Element?
-
+  
   init(startNode: Element?) {
+    print("iterator protocol init")
     currentNode = startNode
   }
-
+  
   mutating func next() -> SinglyLLNode<T>? {
+    print("next")
     let node = currentNode
     currentNode = currentNode?.next
     return node
   }
-
 }
 
 
 
-
 // check memory for Struc SinglyLL
-
-class SinglyLL<T>: Sequence {
-  
-  //  typealias Iterator = <#type#>
-  
-
-  
-
-  
+extension SinglyLL: Sequence {
   typealias Iterator = SinglyLinkedListIterator<T>
   
-  
   func makeIterator() -> SinglyLinkedListIterator<T> {
+    print("make iterator")
     return SinglyLinkedListIterator(startNode: head)
   }
-  
-//  func next() -> SinglyLL<T>.Element? {
-//
-//
-//
-//
-//
-//  }
-  
-  
-  //        while let next = node.next {
-  //          node = next
-  //        }
-  
-  
-  //  func makeIterator() -> SinglyLL<T>.Iterator {
-  //    let x = Iterator(headNode: head as! SinglyLLNode<Any>)
-  //    return x
-  //
-  //  }
-  
-  
+}
+
+class SinglyLL<T: Comparable> {
   typealias Node = SinglyLLNode<T>
   
   // first
@@ -99,9 +82,7 @@ class SinglyLL<T>: Sequence {
   //  deinit {
   //    print("singlyLL deinit")
   //  }
-  //
-  
-  
+
   // possible count
   
   //addToHead, addFirst, this is a push for utilizing removeHead/pop
@@ -137,18 +118,25 @@ class SinglyLL<T>: Sequence {
   //  }
   
   //
-    func printHeadToTail() {
   
-      if var headNode = head {
   
-        // fix. has to be a way not to dupe print here
-        print(headNode.value)
-        while headNode.next != nil {
-          headNode = headNode.next!
-          print(headNode.value)
-        }
-      }
-    }
+//  func printHeadToTail() {
+//
+//    if var currentHead = head {
+//
+//      repeat  {
+//        print(currentHead.value)
+//        currentHead = currentHead.next!
+//      } while currentHead.next != nil
+//
+//      // fix. has to be a way not to dupe print here
+//      //        print(headNode.value)
+//      //        while headNode.next != nil {
+//      //          headNode = headNode.next!
+//      //          print(headNode.value)
+//      //        }
+//    }
+//  }
   
 }
 
