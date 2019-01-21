@@ -10,7 +10,7 @@ import UIKit
 
 class FirstTabVC: UIViewController {
   
-  var singlyLL = SinglyLL()
+  var singlyLL = SinglyLL<Int>()
 //  var tester: Tester!
   
   var ftView = FirstTabView()
@@ -24,10 +24,23 @@ class FirstTabVC: UIViewController {
     
     ftView.generateDSButton.addTarget(self, action: #selector(generateDS), for: .touchUpInside)
     
+    
+    singlyLL.append(5)
+    singlyLL.append(10)
+    singlyLL.append(15)
+    singlyLL.append(20)
+    
     for node in singlyLL {
-      print(node.value!)
+      print(node.value)
     }
- 
+//
+//    print(singlyLL.head?.value)
+//    print(singlyLL.printHeadToTail())
+   
+    
+    
+    
+    
   
   }
   
