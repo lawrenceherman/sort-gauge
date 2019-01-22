@@ -30,8 +30,7 @@ class FirstTabVC: UIViewController {
     singlyLL.append(15)
     singlyLL.append(20)
     
-
-  
+    
     
 
 //    // what exactly is subsequence. memory usage.

@@ -17,6 +17,7 @@ class SinglyLLNode<T: Comparable> {
   init(_ value: T) {
     self.value = value
     print("init \(value)")
+    
   }
   
   deinit {
@@ -24,57 +25,97 @@ class SinglyLLNode<T: Comparable> {
   }
 }
 
-extension SinglyLLNode: Equatable {
+//extension SinglyLLNode: Equatable {
+//
+//}
+
+extension SinglyLLNode: Comparable {
+  
+  //Equatable
   static func == (lhs: SinglyLLNode<T>, rhs: SinglyLLNode<T>) -> Bool {
     return lhs.value == rhs.value
   }
-}
-
-extension SinglyLLNode: Comparable {
+  
   static func < (lhs: SinglyLLNode<T>, rhs: SinglyLLNode<T>) -> Bool {
     return lhs.value < rhs.value
   }
 }
 
 
-struct SinglyLinkedListIterator<T: Comparable>: IteratorProtocol {
+//struct SinglyLinkedListIterator<T: Comparable>: IteratorProtocol {
+//  typealias Element = SinglyLLNode<T>
+//
+//  var currentNode: Element?
+//
+//  init(startNode: Element?) {
+//    print("iterator protocol init")
+//    currentNode = startNode
+//  }
+//
+//  mutating func next() -> SinglyLLNode<T>? {
+//    print("next")
+//    let node = currentNode
+//    currentNode = currentNode?.next
+//    return node
+//  }
+//}
+//
+//
+//
+//// check memory for Struc SinglyLL
+//extension SinglyLL: Sequence {
+//  typealias Iterator = SinglyLinkedListIterator<T>
+//
+//  func makeIterator() -> SinglyLinkedListIterator<T> {
+//    print("make iterator")
+//    return SinglyLinkedListIterator(startNode: head)
+//  }
+//}
+
+//starting and ending indices and a subscript for accessing elements. With those elements defined,
+
+extension SinglyLL: Collection {
+
+  
+  
   typealias Element = SinglyLLNode<T>
   
-  var currentNode: Element?
+
+  typealias Index = Int
   
-  init(startNode: Element?) {
-    print("iterator protocol init")
-    currentNode = startNode
+  typealias Iterator = IndexingIterator<SinglyLL>
+  
+  public var startIndex: Int {
+    return 0
   }
   
-  mutating func next() -> SinglyLLNode<T>? {
-    print("next")
-    let node = currentNode
-    currentNode = currentNode?.next
-    return node
+//  var endIndex: Int {
+//    // getCount
+//  }
+  
+//  public func index(after i: Int) -> Int {
+//    <#code#>
+//  }
+  
+  public subscript(index: Int) -> Element {
+    get {
+      
+      
+    }
   }
+
+
 }
 
-
-
-// check memory for Struc SinglyLL
-extension SinglyLL: Sequence {
-  typealias Iterator = SinglyLinkedListIterator<T>
-  
-  func makeIterator() -> SinglyLinkedListIterator<T> {
-    print("make iterator")
-    return SinglyLinkedListIterator(startNode: head)
-  }
-}
 
 class SinglyLL<T: Comparable> {
-  typealias Node = SinglyLLNode<T>
+//  typealias Node = SinglyLLNode<T>
   
   // first
-  var head: Node?
+  var head: SinglyLLNode<T>?
   
   // last
-  var tail: Node?
+  var tail: SinglyLLNode<T>?
   
   var isEmpty: Bool {
     return head == nil
