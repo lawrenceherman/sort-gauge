@@ -8,12 +8,26 @@
 
 import UIKit
 
+
+
+extension FirstTabVC: UIGestureRecognizerDelegate{
+  
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    
+  
+  
+  }
+  
+  
+  
+}
+
+
 class FirstTabVC: UIViewController {
   
-  var singlyLL = SinglyLL<Int>()
-  //  var tester: Tester!
-  
+  var currentDS = SinglyLL<Int>()
   var ftView = FirstTabView()
+  var selectedDS = SelectedDataStructure.linkedList
   
   
   override func viewDidLoad() {
@@ -23,19 +37,44 @@ class FirstTabVC: UIViewController {
     navigationController?.navigationBar.isTranslucent = false
     
     ftView.generateDSButton.addTarget(self, action: #selector(generateDS), for: .touchUpInside)
-    
-    
-    singlyLL.append(5)
-    singlyLL.append(10)
-    singlyLL.append(15)
-    singlyLL.append(20)
-    
-    
-    
 
-//    // what exactly is subsequence. memory usage.
-//    print(x)
+    let arrayGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(test))
+    let linkedListRecognizer = UITapGestureRecognizer(target: self, action: #selector(test))
+    let treeRecognizer = UITapGestureRecognizer(target: self, action: #selector(test))
   
+    ftView.arrayContainerView.addGestureRecognizer(arrayGestureRecognizer)
+    ftView.linkedListContainerView.addGestureRecognizer(linkedListRecognizer)
+    ftView.treeContainerView.addGestureRecognizer(treeRecognizer)
+    
+    ftView.arrayContainerView.tag = 0
+    ftView.linkedListContainerView.tag = 1
+    ftView.treeContainerView.tag = 2
+    
+    arrayGestureRecognizer.delegate = self
+    linkedListRecognizer.delegate = self
+    treeRecognizer.delegate = self
+  }
+  
+  @objc func test(sender: UITapGestureRecognizer) {
+    
+    switch sender.view?.tag {
+    case 0:
+      print("array tap")
+    case 1:
+      print("linked list tap")
+    case 2:
+      print("tree tap")
+    default:
+      print("array tap")
+    }
+    
+  }
+  
+  
+  enum SelectedDataStructure {
+    case array
+    case linkedList
+    case tree
   }
   
   
@@ -52,16 +91,52 @@ class FirstTabVC: UIViewController {
   @objc func generateDS() {
     print("generateDS")
     
-//    let x = Int(ftView.nTextField.text!)
-//    print(x)
-    
-    
-    // need to generate linked list that appends n times and measure
-    // time of
-    
-    //    let y = SinglyLL()
-    //
 
+    
+    if let ntextFieldValue = Int(ftView.nTextField.text!) {
+      
+     
+      let y = 0...100
+      
+      
+      for _ in 0...ntextFieldValue {000
+        currentDS.append(Int.random(in: y))
+      }
+      
+      
+     
+      
+    } else {
+      
+      print("Enter a value for n")
+     //alert
+      
+      
+    }
+    
+    // intrusive linkedlist
+    
+    
+    
+    
+//
+//    if ntextFieldValue != 0 {
+//      print("0")
+//      print(ntextFieldValue)
+//
+//
+//
+//    } else {
+//
+//      print("Enter a value for N")
+//      //alert
+//
+//
+//
+//    }
+   
+
+  
   }
   
   override func viewDidAppear(_ animated: Bool) {
