@@ -99,7 +99,7 @@ class FirstTabVC: UIViewController {
       let y = 0...100
       
       
-      for _ in 0...ntextFieldValue {000
+      for _ in 0...ntextFieldValue {
         currentDS.append(Int.random(in: y))
       }
       

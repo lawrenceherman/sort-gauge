@@ -6,110 +6,67 @@
 //  Copyright © 2018 Lawrence Herman. All rights reserved.
 //
 
-import Foundation
 
-class DoublyLL {
-  
-  // swift array is first last
-  
-  var head: DoublyLLNode?
-  var tail: DoublyLLNode?
-  
-
- // swift term // make generic
-  func append(value :Int) {
-
-    let newNode = DoublyLLNode(value: value)
-
-    if let tempHead = head {
-
-      while tempHead.next != nil {
-
-
-
-
-
-      }
-
-      head?.next = newNode
-      newNode.previous = head
-
-
-
-    } else {
-
-       head = newNode
-
-
-    }
-
-
-//
-  }
-}
-  
-  // addFirst, addHead
-//  func prepend(value: Int) {
-//
-//  }
-  
-  // remove(at: Int) -> Array<Element>.Element
-  // removeFirst() -> Element
-  // removeLast() -> Element
-  
-//  func removeAll(where: (Element) -> Bool)
-//  Removes all the elements that satisfy the given predicate.
-  
-  //swift term - isEmpty
-  
-  //swift term
-//  func insert(value: Int, at index: Int) {
-//
-//
-//
-//
-//  }
-//
-//
-//  func count() -> Int {
-//
-//
-//
-//
-//
-//  }
-
-
-
-
-
-//}
-
-class DoublyLLNode {
-  
-  var value: Int?
+class DoublyLLNode<T: Equatable> : Equatable {
   var next: DoublyLLNode?
   var previous: DoublyLLNode?
-  
-  init(value: Int) {
+  var value: T
+
+  init(value: T) {
     self.value = value
   }
-  
-  deinit {
-    print("DoublyLLNode deinit")
+
+  static func == (lhs: DoublyLLNode<T>, rhs: DoublyLLNode<T>) -> Bool {
+    return lhs.value == rhs.value
   }
+
+
 }
 
 
 
-//func createDoublyLLOfLength(length: Int) -> DoublyLL {
-//  
-//  
-//  
-//  
-//  
-//  
-//  
+
+
+//extension DoublyLLNode: Equatable {
 //
+////  static func < (lhs: DoublyLLNode<T>, rhs: DoublyLLNode<T>) -> Bool {
+////    return lhs.value < rhs.value
+////  }
 //
+//  static func == (lhs: DoublyLLNode<T>, rhs: DoublyLLNode<T>) -> Bool {
+//    return lhs.value == rhs.value
+//  }
+//}
+
+//
+//class DoublyLinkedList<T> {
+//  var head: DoublyLLNode<T>?
+//  var tail: DoublyLLNode<T>?
+//  
+//  //addTo Head
+//  func prepend(value: T) {
+//    let newNode = DoublyLLNode(value: value)
+//    
+//    if let currentHead = head {
+//      newNode.next = currentHead
+//      currentHead.previous = newNode
+//    } else {
+//      tail = newNode
+//    }
+//    
+//    head = newNode
+//  }
+//  
+//  func append(value: T) {
+//    let newNode = DoublyLLNode(value: value)
+//    
+//    if let currentTail = tail {
+//      newNode.next = currentTail
+//      currentTail.previous = newNode
+//    } else {
+//      head = newNode
+//    }
+//    
+//    tail = newNode
+//  }
 //}

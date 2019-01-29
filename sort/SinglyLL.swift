@@ -55,6 +55,10 @@ struct SinglyLinkedListIterator<T: Comparable>: IteratorProtocol {
 }
 
 
+
+
+
+
 // check memory for Struc SinglyLL
 extension SinglyLL: Sequence {
   typealias Iterator = SinglyLinkedListIterator<T>
@@ -66,7 +70,7 @@ extension SinglyLL: Sequence {
 }
 
 
-
+//struct or class
 struct SinglyLL<T: Comparable> {
   // first
   var head: SinglyLLNode<T>?
