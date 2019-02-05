@@ -36,7 +36,7 @@ extension SinglyLLNode: Comparable {
   }
 }
 
-struct SinglyLinkedListIterator<T: Comparable>: IteratorProtocol {
+struct SinglyLLIterator<T: Comparable>: IteratorProtocol {
   typealias Element = SinglyLLNode<T>
 
   var currentNode: Element?
@@ -55,17 +55,13 @@ struct SinglyLinkedListIterator<T: Comparable>: IteratorProtocol {
 }
 
 
-
-
-
-
 // check memory for Struc SinglyLL
 extension SinglyLL: Sequence {
-  typealias Iterator = SinglyLinkedListIterator<T>
+  typealias Iterator = SinglyLLIterator<T>
 
-  func makeIterator() -> SinglyLinkedListIterator<T> {
+  func makeIterator() -> SinglyLLIterator<T> {
     print("make iterator")
-    return SinglyLinkedListIterator(startNode: head)
+    return SinglyLLIterator(startNode: head)
   }
 }
 

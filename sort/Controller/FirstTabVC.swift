@@ -10,22 +10,22 @@ import UIKit
 
 
 
-extension FirstTabVC: UIGestureRecognizerDelegate{
-  
+extension FirstTabVC: UIGestureRecognizerDelegate {
+
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    
-  
-  
+
+
+
   }
-  
-  
-  
+
+
+
 }
 
 
 class FirstTabVC: UIViewController {
   
-  var currentDS = SinglyLL<Int>()
+  var currentDS = DoublyLL<Int>()
   var ftView = FirstTabView()
   var selectedDS = SelectedDataStructure.linkedList
   
@@ -100,18 +100,19 @@ class FirstTabVC: UIViewController {
       
       
       for _ in 0...ntextFieldValue {
-        currentDS.append(Int.random(in: y))
+        print("append")
+        currentDS.append(value: Int.random(in: y))
       }
-      
-      
-     
+    
       
     } else {
-      
       print("Enter a value for n")
      //alert
-      
-      
+    }
+    
+    
+    for node in currentDS {
+      print(node.value)
     }
     
     // intrusive linkedlist
