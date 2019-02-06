@@ -26,7 +26,6 @@ extension DoublyLLNode: Comparable {
   }
 }
 
-
 // struct vs class for iterator
 class DoublyLLIterator<T: Comparable> : IteratorProtocol {
 
@@ -44,8 +43,6 @@ class DoublyLLIterator<T: Comparable> : IteratorProtocol {
     currentNode = currentNode?.next
     return node
   }
-  
-
 }
 
 extension DoublyLL : Sequence {
@@ -59,6 +56,7 @@ extension DoublyLL : Sequence {
 
 class DoublyLL<T: Comparable> {
  
+  //see of typealias works better
   var head: DoublyLLNode<T>?
   var tail: DoublyLLNode<T>?
   
@@ -90,6 +88,55 @@ class DoublyLL<T: Comparable> {
     
     tail = newNode
   }
+
+  var count: Int {
+    guard var currentHead = head else { return 0 }
+    
+    var count = 1
+    while let next = currentHead.next {
+      count += 1
+      currentHead = next
+    }
+    
+    return count
+  }
+}
+
+
+
+extension DoublyLL : Collection {
+  
+  subscript(position: Int) -> DoublyLLNode<T> {
+    if position == 0 {
+      
+    
+    
+    }
+    
+    
+  
+  
+  }
+  
+  func index(after i: Int) -> Int {
+    
+  
+  
+  
+  }
+  
+  public typealias Index = Int
+  
+  var startIndex: Int {
+    return 0
+  }
+  
+  //split out count property/  count is O(n)
+  var endIndex: Int {
+    guard count >= 1 else { return 0 }
+    return count - 1
+  }
+
 }
 
 
