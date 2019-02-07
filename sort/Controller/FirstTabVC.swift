@@ -11,15 +11,15 @@ import UIKit
 
 
 extension FirstTabVC: UIGestureRecognizerDelegate {
-
-  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-
-
-
-  }
-
-
-
+  //
+  //  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+  //
+  //
+  //
+  //  }
+  
+  
+  
 }
 
 
@@ -37,11 +37,11 @@ class FirstTabVC: UIViewController {
     navigationController?.navigationBar.isTranslucent = false
     
     ftView.generateDSButton.addTarget(self, action: #selector(generateDS), for: .touchUpInside)
-
+    
     let arrayGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(test))
     let linkedListRecognizer = UITapGestureRecognizer(target: self, action: #selector(test))
     let treeRecognizer = UITapGestureRecognizer(target: self, action: #selector(test))
-  
+    
     ftView.arrayContainerView.addGestureRecognizer(arrayGestureRecognizer)
     ftView.linkedListContainerView.addGestureRecognizer(linkedListRecognizer)
     ftView.treeContainerView.addGestureRecognizer(treeRecognizer)
@@ -91,11 +91,11 @@ class FirstTabVC: UIViewController {
   @objc func generateDS() {
     print("generateDS")
     
-
+    
     
     if let ntextFieldValue = Int(ftView.nTextField.text!) {
       
-     
+      
       let y = 0...100
       
       
@@ -103,42 +103,24 @@ class FirstTabVC: UIViewController {
         print("append")
         currentDS.append(value: Int.random(in: y))
       }
-    
+      
       
     } else {
       print("Enter a value for n")
-     //alert
+      //alert
     }
     
-    
-    for node in currentDS {
-      print(node.value)
-    }
-    
-    // intrusive linkedlist
-    
-    
-    
-    
-//
-//    if ntextFieldValue != 0 {
-//      print("0")
-//      print(ntextFieldValue)
-//
-//
-//
-//    } else {
-//
-//      print("Enter a value for N")
-//      //alert
-//
-//
-//
-//    }
-   
-
+    let x = currentDS[10]
+    print(x)
+  
   
   }
+  
+  
+  
+  
+  
+  
   
   override func viewDidAppear(_ animated: Bool) {
     

@@ -26,32 +26,32 @@ extension DoublyLLNode: Comparable {
   }
 }
 
-// struct vs class for iterator
-class DoublyLLIterator<T: Comparable> : IteratorProtocol {
+//// struct vs class for iterator
+//class DoublyLLIterator<T: Comparable> : IteratorProtocol {
+//
+//  typealias Element = DoublyLLNode<T>
+//  var currentNode: Element?
+//
+//  init(startNode: Element?) {
+//    print("DoubleLLIterator init" )
+//    currentNode = startNode
+//  }
+//
+//  func next() -> DoublyLLIterator.Element? {
+//    print("DoublyLLNext")
+//    let node = currentNode
+//    currentNode = currentNode?.next
+//    return node
+//  }
+//}
 
-  typealias Element = DoublyLLNode<T>
-  var currentNode: Element?
-  
-  init(startNode: Element?) {
-    print("DoubleLLIterator init" )
-    currentNode = startNode
-  }
-  
-  func next() -> DoublyLLIterator.Element? {
-    print("DoublyLLNext")
-    let node = currentNode
-    currentNode = currentNode?.next
-    return node
-  }
-}
-
-extension DoublyLL : Sequence {
-  typealias Iterator = DoublyLLIterator<T>
-  
-  func makeIterator() -> DoublyLLIterator<T> {
-    return DoublyLLIterator(startNode: head)
-  }
-}
+//extension DoublyLL : Sequence {
+//  typealias Iterator = DoublyLLIterator<T>
+//
+//  func makeIterator() -> DoublyLLIterator<T> {
+//    return DoublyLLIterator(startNode: head)
+//  }
+//}
 
 
 class DoublyLL<T: Comparable> {
@@ -88,8 +88,9 @@ class DoublyLL<T: Comparable> {
     
     tail = newNode
   }
-
+  
   var count: Int {
+    print("count")
     guard var currentHead = head else { return 0 }
     
     var count = 1
@@ -100,43 +101,69 @@ class DoublyLL<T: Comparable> {
     
     return count
   }
+
+  var isEmpty: Bool {
+    return head == nil
+  }
 }
 
-
-
-extension DoublyLL : Collection {
+extension DoublyLL : Collection  {
+  
+  
+  
   
   subscript(position: Int) -> DoublyLLNode<T> {
-    if position == 0 {
+    
+    // trouble working with any unwrapping condition here without optional return
+    // does it matter which error?  subscript out of range causes runtime anyways
+    
+    var node = head!
+    
+    for _ in 0...position {
+      node = node.next!
       
-    
-    
     }
-    
-    
   
-  
+    return node
   }
+  
+ 
+
+  
+  
+  
+  
+ 
+  
+
+  
+  
   
   func index(after i: Int) -> Int {
-    
-  
-  
-  
+    print("index after")
+    return i + 1
   }
   
-  public typealias Index = Int
+ 
   
+ typealias Element = DoublyLLNode<T>
+  
+
+  // make value the Element?
+  
+
   var startIndex: Int {
+    print("start index")
     return 0
   }
-  
-  //split out count property/  count is O(n)
+
+  //check isEmpty accounts for no items
   var endIndex: Int {
-    guard count >= 1 else { return 0 }
-    return count - 1
+    print("end index")
+    return count
   }
 
 }
 
 
+//  public typealias Index = Int
