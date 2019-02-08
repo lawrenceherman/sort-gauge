@@ -90,16 +90,14 @@ class FirstTabVC: UIViewController {
   
   @objc func generateDS() {
     print("generateDS")
-    
-    
-    
+
     if let ntextFieldValue = Int(ftView.nTextField.text!) {
       
       
       let y = 0...100
       
       
-      for _ in 0...ntextFieldValue {
+      for _ in 1...ntextFieldValue {
         print("append")
         currentDS.append(value: Int.random(in: y))
       }
@@ -110,8 +108,16 @@ class FirstTabVC: UIViewController {
       //alert
     }
     
-    let x = currentDS[10]
-    print(x)
+    for i in currentDS {
+      print(i.value)
+    }
+//
+//
+//
+//    print(currentDS.isEmpty)
+    
+//    print(currentDS[3].value)
+  
   
   
   }

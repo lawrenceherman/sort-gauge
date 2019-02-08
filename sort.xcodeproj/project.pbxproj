@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE6BAC65220DA379006355D5 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BAC64220DA379006355D5 /* Tree.swift */; };
 		FE966BE421EA433100229E74 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE966BE321EA433100229E74 /* TabBarVC.swift */; };
 		FE966BE621EA456200229E74 /* SecondTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE966BE521EA456200229E74 /* SecondTabVC.swift */; };
 		FE96D14221EA593F00D0BC7B /* FirstTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96D14121EA593E00D0BC7B /* FirstTabView.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE6BAC64220DA379006355D5 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		FE966BE321EA433100229E74 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		FE966BE521EA456200229E74 /* SecondTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabVC.swift; sourceTree = "<group>"; };
 		FE96D14121EA593E00D0BC7B /* FirstTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE6BAC62220DA343006355D5 /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				FEF52B1B219BAB81002FCBCF /* DoublyLL.swift */,
+				FEF52B1D219C3CB0002FCBCF /* SinglyLL.swift */,
+				FE6BAC64220DA379006355D5 /* Tree.swift */,
+			);
+			path = DataStructures;
+			sourceTree = "<group>";
+		};
+		FE6BAC63220DA35D006355D5 /* Sorts */ = {
+			isa = PBXGroup;
+			children = (
+				FEF52B19219BAB28002FCBCF /* mergesort.swift */,
+			);
+			path = Sorts;
+			sourceTree = "<group>";
+		};
 		FE966BE721EA496500229E74 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,13 +147,12 @@
 		FEF52B06219BAB19002FCBCF /* sort */ = {
 			isa = PBXGroup;
 			children = (
+				FE6BAC63220DA35D006355D5 /* Sorts */,
+				FE6BAC62220DA343006355D5 /* DataStructures */,
 				FE96D14021EA591F00D0BC7B /* View */,
 				FE966BE721EA496500229E74 /* Controller */,
 				FE966BE921EA4C2800229E74 /* Utility */,
-				FEF52B1B219BAB81002FCBCF /* DoublyLL.swift */,
-				FEF52B1D219C3CB0002FCBCF /* SinglyLL.swift */,
 				FED0B74F21AA124B005A4380 /* Tester.swift */,
-				FEF52B19219BAB28002FCBCF /* mergesort.swift */,
 			);
 			path = sort;
 			sourceTree = "<group>";
@@ -252,6 +271,7 @@
 				FEF52B1A219BAB28002FCBCF /* mergesort.swift in Sources */,
 				FEF52B1C219BAB81002FCBCF /* DoublyLL.swift in Sources */,
 				FEF52B08219BAB19002FCBCF /* AppDelegate.swift in Sources */,
+				FE6BAC65220DA379006355D5 /* Tree.swift in Sources */,
 				FE966BE421EA433100229E74 /* TabBarVC.swift in Sources */,
 				FE966BE621EA456200229E74 /* SecondTabVC.swift in Sources */,
 				FE96D14221EA593F00D0BC7B /* FirstTabView.swift in Sources */,
