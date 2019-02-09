@@ -10,8 +10,8 @@
 
 
 class SinglyLLNode<T: Comparable> {
-  var value: T
   var next: SinglyLLNode?
+  var value: T
   
   init(_ value: T) {
     self.value = value

@@ -25,7 +25,7 @@ extension FirstTabVC: UIGestureRecognizerDelegate {
 
 class FirstTabVC: UIViewController {
   
-  var currentDS = DoublyLL<Int>()
+  var currentDS = BST()
   var ftView = FirstTabView()
   var selectedDS = SelectedDataStructure.linkedList
   
@@ -70,13 +70,11 @@ class FirstTabVC: UIViewController {
     
   }
   
-  
   enum SelectedDataStructure {
     case array
     case linkedList
     case tree
   }
-  
   
   override func loadView() {
     print("FirstTabVC loadView")
@@ -108,9 +106,12 @@ class FirstTabVC: UIViewController {
       //alert
     }
     
-    for i in currentDS {
-      print(i.value)
-    }
+    
+    
+    
+//    for i in currentDS {
+//      print(i.value)
+//    }
 //
 //
 //
