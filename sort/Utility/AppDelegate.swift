@@ -19,8 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
    
     window = UIWindow()
+//    UIWindow(frame: UIScreen.main.bounds)
     window?.makeKeyAndVisible()
-    window?.rootViewController = TabBarVC()
+//    window?.rootViewController = TabBarVC()
+ 
+    window?.rootViewController = UINavigationController(rootViewController: HomeCVC(collectionViewLayout: UICollectionViewFlowLayout()))
   
   
     return true
