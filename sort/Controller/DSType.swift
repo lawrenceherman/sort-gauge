@@ -21,23 +21,58 @@ extension DSType: UIGestureRecognizerDelegate {
   
 }
 
+extension DSType: UIPickerViewDelegate, UIPickerViewDataSource {
+  
+  func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    return 1
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return pickerTypes.count
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    return pickerTypes[row]
+
+  }
+  
+  
+  // delegate
+  
+//  func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+//    <#code#>
+//  }
+//
+//  func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+//    <#code#>
+//  }
+  
+  
+  
+  
+  
+}
+
 
 class DSType: UIViewController {
   
   var currentDS = BST()
   var dsTypeView = DSTypeView()
   var selectedDS = SelectedDataStructure.linkedList
-  
+  let pickerTypes = ["Int " + String(MemoryLayout<Int>.size) + "Bytes", "Float" + String(MemoryLayout<Float>.size), "Double" + String(MemoryLayout<Double>.size), "String" + String(MemoryLayout<String>.size)]
+
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
     print("FirstTabVC view did load")
     
     
-    
     navigationController?.navigationBar.isTranslucent = false
     
     dsTypeView.generateDSButton.addTarget(self, action: #selector(generateDS), for: .touchUpInside)
+    
+    dsTypeView.dataTypeButton.addTarget(self, action: #selector(handleDataTypeButtonPress), for: .allTouchEvents)
     
     let arrayGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(test))
     let linkedListRecognizer = UITapGestureRecognizer(target: self, action: #selector(test))
@@ -54,6 +89,28 @@ class DSType: UIViewController {
     arrayGestureRecognizer.delegate = self
     linkedListRecognizer.delegate = self
     treeRecognizer.delegate = self
+ 
+    dsTypeView.dataTypePicker.delegate = self
+    dsTypeView.dataTypePicker.dataSource = self
+  
+  }
+  
+  @objc func handleDataTypeButtonPress() {
+    
+    dsTypeView.dataTypePicker.isHidden = false
+
+    
+    
+    
+    
+    
+    
+    
+    print("button press")
+    
+    
+    
+    
   }
   
   @objc func test(sender: UITapGestureRecognizer) {

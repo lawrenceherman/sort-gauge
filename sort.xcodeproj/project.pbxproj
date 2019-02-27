@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE6BAC65220DA379006355D5 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BAC64220DA379006355D5 /* Tree.swift */; };
+		FE6BAC65220DA379006355D5 /* BST.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BAC64220DA379006355D5 /* BST.swift */; };
 		FE966BE421EA433100229E74 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE966BE321EA433100229E74 /* TabBarVC.swift */; };
 		FE96D14221EA593F00D0BC7B /* DSTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96D14121EA593E00D0BC7B /* DSTypeView.swift */; };
 		FE9E39EB2218CE0F00D95B63 /* HomeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E39EA2218CE0F00D95B63 /* HomeCVC.swift */; };
@@ -34,7 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FE6BAC64220DA379006355D5 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		FE6BAC64220DA379006355D5 /* BST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BST.swift; sourceTree = "<group>"; };
 		FE966BE321EA433100229E74 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		FE96D14121EA593E00D0BC7B /* DSTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTypeView.swift; sourceTree = "<group>"; };
 		FE9E39EA2218CE0F00D95B63 /* HomeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCVC.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 			children = (
 				FEF52B1B219BAB81002FCBCF /* DoublyLL.swift */,
 				FEF52B1D219C3CB0002FCBCF /* SinglyLL.swift */,
-				FE6BAC64220DA379006355D5 /* Tree.swift */,
+				FE6BAC64220DA379006355D5 /* BST.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -275,7 +275,7 @@
 				FEF52B1C219BAB81002FCBCF /* DoublyLL.swift in Sources */,
 				FEF52B08219BAB19002FCBCF /* AppDelegate.swift in Sources */,
 				FE9E39ED2218D61D00D95B63 /* HomeCVCell.swift in Sources */,
-				FE6BAC65220DA379006355D5 /* Tree.swift in Sources */,
+				FE6BAC65220DA379006355D5 /* BST.swift in Sources */,
 				FE966BE421EA433100229E74 /* TabBarVC.swift in Sources */,
 				FE96D14221EA593F00D0BC7B /* DSTypeView.swift in Sources */,
 				FED0B75021AA124B005A4380 /* Tester.swift in Sources */,

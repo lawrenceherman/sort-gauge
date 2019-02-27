@@ -25,35 +25,33 @@ class BST {
     
     if var currentRoot = root {
       
-      while (currentRoot.left != nil && value <= currentRoot.value) || (currentRoot.right != nil && value > currentRoot.value) {
-   
+      while ((currentRoot.left != nil) && (value <= currentRoot.value)) || ((currentRoot.right != nil) && (value > currentRoot.value)) {
         
         if value <= currentRoot.value {
-          currentRoot.left = currentRoot
+          currentRoot = currentRoot.left!
+          break
         }
         
         if value > currentRoot.value {
-          currentRoot.right = currentRoot
+          currentRoot = currentRoot.right!
+          break
         }
       
       }
       
-      
+      //node.value?
       if value <= currentRoot.value {
         currentRoot.left = node
       } else {
         currentRoot.right = node
       }
-      
-      
-      
+    
       // determine lesser or greater than currrent value
       // if lesser and no node place node
       // if greater and no node place node
       
       // if lesser and there is a node move current to that node and loop
       // if greater and there is a node move current to that node and loop
-      
     } else {
       
       

@@ -23,10 +23,18 @@ class DSTypeView: UIView {
   let dataTypeButton: UIButton = {
     let button = UIButton()
     button.setTitle("Int", for: .normal)
+    button.setTitleColor(.black, for: .normal)
     button.backgroundColor = .white
     
     return button
     
+  }()
+  
+  let dataTypePicker: UIPickerView = {
+    let picker = UIPickerView()
+    picker.backgroundColor = .white
+    picker.isHidden = true
+    return picker
   }()
   
   let arrayContainerView: UIView = {
@@ -97,6 +105,8 @@ class DSTypeView: UIView {
     
     addSubview(nTextField)
     addSubview(dataTypeButton)
+    
+    addSubview(dataTypePicker)
 
     addSubview(arrayContainerView)
     arrayContainerView.addSubview(arrayLabel)
@@ -125,6 +135,10 @@ class DSTypeView: UIView {
     dataTypeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: nTextField.trailingAnchor, multiplier: 2.0).isActive = true
     dataTypeButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
     dataTypeButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.08).isActive = true
+    
+    dataTypePicker.translatesAutoresizingMaskIntoConstraints = false
+    
+    
     
     
     
