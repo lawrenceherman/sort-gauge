@@ -10,7 +10,7 @@ import UIKit
 
 
 
-extension FirstTabVC: UIGestureRecognizerDelegate {
+extension DSType: UIGestureRecognizerDelegate {
   //
   //  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
   //
@@ -19,14 +19,13 @@ extension FirstTabVC: UIGestureRecognizerDelegate {
   //  }
   
   
-  
 }
 
 
-class FirstTabVC: UIViewController {
+class DSType: UIViewController {
   
   var currentDS = BST()
-  var ftView = FirstTabView()
+  var dsTypeView = DSTypeView()
   var selectedDS = SelectedDataStructure.linkedList
   
   
@@ -34,21 +33,23 @@ class FirstTabVC: UIViewController {
     super.viewDidLoad()
     print("FirstTabVC view did load")
     
+    
+    
     navigationController?.navigationBar.isTranslucent = false
     
-    ftView.generateDSButton.addTarget(self, action: #selector(generateDS), for: .touchUpInside)
+    dsTypeView.generateDSButton.addTarget(self, action: #selector(generateDS), for: .touchUpInside)
     
     let arrayGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(test))
     let linkedListRecognizer = UITapGestureRecognizer(target: self, action: #selector(test))
     let treeRecognizer = UITapGestureRecognizer(target: self, action: #selector(test))
     
-    ftView.arrayContainerView.addGestureRecognizer(arrayGestureRecognizer)
-    ftView.linkedListContainerView.addGestureRecognizer(linkedListRecognizer)
-    ftView.treeContainerView.addGestureRecognizer(treeRecognizer)
+    dsTypeView.arrayContainerView.addGestureRecognizer(arrayGestureRecognizer)
+    dsTypeView.linkedListContainerView.addGestureRecognizer(linkedListRecognizer)
+    dsTypeView.treeContainerView.addGestureRecognizer(treeRecognizer)
     
-    ftView.arrayContainerView.tag = 0
-    ftView.linkedListContainerView.tag = 1
-    ftView.treeContainerView.tag = 2
+    dsTypeView.arrayContainerView.tag = 0
+    dsTypeView.linkedListContainerView.tag = 1
+    dsTypeView.treeContainerView.tag = 2
     
     arrayGestureRecognizer.delegate = self
     linkedListRecognizer.delegate = self
@@ -78,7 +79,7 @@ class FirstTabVC: UIViewController {
   
   override func loadView() {
     print("FirstTabVC loadView")
-    view = ftView
+    view = dsTypeView
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -89,7 +90,7 @@ class FirstTabVC: UIViewController {
   @objc func generateDS() {
     print("generateDS")
 
-    if let ntextFieldValue = Int(ftView.nTextField.text!) {
+    if let ntextFieldValue = Int(dsTypeView.nTextField.text!) {
       
       
       let y = 0...100

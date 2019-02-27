@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstTabView: UIView {
+class DSTypeView: UIView {
   
   let nTextField: UITextField = {
     let textField = UITextField()
@@ -18,6 +18,15 @@ class FirstTabView: UIView {
     textField.font = UIFont(name: "Times", size: 30.0)
     textField.adjustsFontSizeToFitWidth = false
     return textField
+  }()
+  
+  let dataTypeButton: UIButton = {
+    let button = UIButton()
+    button.setTitle("Int", for: .normal)
+    button.backgroundColor = .white
+    
+    return button
+    
   }()
   
   let arrayContainerView: UIView = {
@@ -87,6 +96,7 @@ class FirstTabView: UIView {
   func addSubviews() {
     
     addSubview(nTextField)
+    addSubview(dataTypeButton)
 
     addSubview(arrayContainerView)
     arrayContainerView.addSubview(arrayLabel)
@@ -104,9 +114,19 @@ class FirstTabView: UIView {
 
     nTextField.translatesAutoresizingMaskIntoConstraints = false
     nTextField.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 2.0).isActive = true
-    nTextField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+//    nTextField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+
+    nTextField.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 3.0).isActive = true
     nTextField.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
     nTextField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.08).isActive = true
+    
+    dataTypeButton.translatesAutoresizingMaskIntoConstraints = false
+    dataTypeButton.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 2.0).isActive = true
+    dataTypeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: nTextField.trailingAnchor, multiplier: 2.0).isActive = true
+    dataTypeButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
+    dataTypeButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.08).isActive = true
+    
+    
     
     arrayContainerView.translatesAutoresizingMaskIntoConstraints = false
     arrayContainerView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true

@@ -27,8 +27,23 @@ class HomeCVC: UICollectionViewController {
   
       self.collectionView.register( HomeCVCell.self, forCellWithReuseIdentifier: reuseIdentifier)
   
+      navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleGenerateAnalysis))
+  
+  
   
   }
+  
+  @objc func handleGenerateAnalysis() {
+    
+    
+      navigationController?.pushViewController(DSType(), animated: true)
+    
+    
+    
+ 
+  }
+  
+  
 
  
 
