@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FE6BAC65220DA379006355D5 /* BST.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BAC64220DA379006355D5 /* BST.swift */; };
+		FE6BC260222AF70200241F91 /* BSTNestedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BC25F222AF70200241F91 /* BSTNestedNode.swift */; };
+		FE6BC262222AF73800241F91 /* BSTNoNodeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BC261222AF73800241F91 /* BSTNoNodeClass.swift */; };
+		FE6BC264222AF74E00241F91 /* BSTEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BC263222AF74E00241F91 /* BSTEnum.swift */; };
 		FE966BE421EA433100229E74 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE966BE321EA433100229E74 /* TabBarVC.swift */; };
 		FE96D14221EA593F00D0BC7B /* DSTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96D14121EA593E00D0BC7B /* DSTypeView.swift */; };
 		FE9E39EB2218CE0F00D95B63 /* HomeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E39EA2218CE0F00D95B63 /* HomeCVC.swift */; };
@@ -35,6 +38,9 @@
 
 /* Begin PBXFileReference section */
 		FE6BAC64220DA379006355D5 /* BST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BST.swift; sourceTree = "<group>"; };
+		FE6BC25F222AF70200241F91 /* BSTNestedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTNestedNode.swift; sourceTree = "<group>"; };
+		FE6BC261222AF73800241F91 /* BSTNoNodeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTNoNodeClass.swift; sourceTree = "<group>"; };
+		FE6BC263222AF74E00241F91 /* BSTEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTEnum.swift; sourceTree = "<group>"; };
 		FE966BE321EA433100229E74 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		FE96D14121EA593E00D0BC7B /* DSTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTypeView.swift; sourceTree = "<group>"; };
 		FE9E39EA2218CE0F00D95B63 /* HomeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCVC.swift; sourceTree = "<group>"; };
@@ -78,6 +84,9 @@
 				FEF52B1B219BAB81002FCBCF /* DoublyLL.swift */,
 				FEF52B1D219C3CB0002FCBCF /* SinglyLL.swift */,
 				FE6BAC64220DA379006355D5 /* BST.swift */,
+				FE6BC25F222AF70200241F91 /* BSTNestedNode.swift */,
+				FE6BC261222AF73800241F91 /* BSTNoNodeClass.swift */,
+				FE6BC263222AF74E00241F91 /* BSTEnum.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -270,11 +279,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEF52B1E219C3CB0002FCBCF /* SinglyLL.swift in Sources */,
+				FE6BC262222AF73800241F91 /* BSTNoNodeClass.swift in Sources */,
 				FEF52B0A219BAB19002FCBCF /* DSType.swift in Sources */,
 				FEF52B1A219BAB28002FCBCF /* mergesort.swift in Sources */,
 				FEF52B1C219BAB81002FCBCF /* DoublyLL.swift in Sources */,
+				FE6BC260222AF70200241F91 /* BSTNestedNode.swift in Sources */,
 				FEF52B08219BAB19002FCBCF /* AppDelegate.swift in Sources */,
 				FE9E39ED2218D61D00D95B63 /* HomeCVCell.swift in Sources */,
+				FE6BC264222AF74E00241F91 /* BSTEnum.swift in Sources */,
 				FE6BAC65220DA379006355D5 /* BST.swift in Sources */,
 				FE966BE421EA433100229E74 /* TabBarVC.swift in Sources */,
 				FE96D14221EA593F00D0BC7B /* DSTypeView.swift in Sources */,

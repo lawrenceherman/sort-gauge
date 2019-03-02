@@ -25,9 +25,7 @@ class DSTypeView: UIView {
     button.setTitle("Int", for: .normal)
     button.setTitleColor(.black, for: .normal)
     button.backgroundColor = .white
-    
     return button
-    
   }()
   
   let dataTypePicker: UIPickerView = {
@@ -51,20 +49,20 @@ class DSTypeView: UIView {
     return label
   }()
   
-  let linkedListContainerView: UIView = {
+  let llContainerView: UIView = {
     let view = UIView()
     view.backgroundColor = .white
     return view
   }()
   
-  let linkedListLabel: UILabel = {
+  let llLabel: UILabel = {
     let label = UILabel()
     label.text = "Linked List"
     label.textAlignment = .center
     return label
   }()
   
-  let linkedListSC: UISegmentedControl = {
+  let llSC: UISegmentedControl = {
     let segementedControl = UISegmentedControl(items: ["Singly", "Doubly"])
     segementedControl.selectedSegmentIndex = 0
     return segementedControl
@@ -74,6 +72,12 @@ class DSTypeView: UIView {
     let view = UIView()
     view.backgroundColor = .orange
     return view
+  }()
+  
+  let treeSC: UISegmentedControl = {
+    let segementedControl = UISegmentedControl(items: ["Binary Search", "AVL", "Red-Black", "Heap"])
+    segementedControl.selectedSegmentIndex = 0
+    return segementedControl
   }()
 
   let treeLabel: UILabel = {
@@ -112,12 +116,13 @@ class DSTypeView: UIView {
     arrayContainerView.addSubview(arrayLabel)
     addSubview(generateDSButton)
     
-    addSubview(linkedListContainerView)
-    linkedListContainerView.addSubview(linkedListLabel)
-    linkedListContainerView.addSubview(linkedListSC)
+    addSubview(llContainerView)
+    llContainerView.addSubview(llLabel)
+    llContainerView.addSubview(llSC)
 
     addSubview(treeContainerView)
     treeContainerView.addSubview(treeLabel)
+    treeContainerView.addSubview(treeSC)
   }
   
   func setConstraints() {
@@ -139,9 +144,6 @@ class DSTypeView: UIView {
     dataTypePicker.translatesAutoresizingMaskIntoConstraints = false
     
     
-    
-    
-    
     arrayContainerView.translatesAutoresizingMaskIntoConstraints = false
     arrayContainerView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
     arrayContainerView.topAnchor.constraint(equalToSystemSpacingBelow: nTextField.bottomAnchor, multiplier: 2.0).isActive = true
@@ -154,34 +156,39 @@ class DSTypeView: UIView {
     arrayLabel.widthAnchor.constraint(equalTo: arrayContainerView.widthAnchor, multiplier: 0.5).isActive = true
     arrayLabel.heightAnchor.constraint(equalTo: arrayContainerView.heightAnchor, multiplier: 0.2).isActive = true
     
-    linkedListContainerView.translatesAutoresizingMaskIntoConstraints = false
-    linkedListContainerView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    linkedListContainerView.topAnchor.constraint(equalToSystemSpacingBelow: arrayContainerView.bottomAnchor, multiplier: 0.0).isActive = true
-    linkedListContainerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1.0).isActive = true
-    linkedListContainerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2).isActive = true
+    llContainerView.translatesAutoresizingMaskIntoConstraints = false
+    llContainerView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    llContainerView.topAnchor.constraint(equalToSystemSpacingBelow: arrayContainerView.bottomAnchor, multiplier: 0.0).isActive = true
+    llContainerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1.0).isActive = true
+    llContainerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2).isActive = true
     
-    linkedListLabel.translatesAutoresizingMaskIntoConstraints = false
-    linkedListLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    linkedListLabel.topAnchor.constraint(equalToSystemSpacingBelow: linkedListContainerView.topAnchor, multiplier: 3.0).isActive = true
-    linkedListLabel.widthAnchor.constraint(equalTo: linkedListContainerView.widthAnchor, multiplier: 0.5).isActive = true
-    linkedListLabel.heightAnchor.constraint(equalTo: linkedListContainerView.heightAnchor, multiplier: 0.2).isActive = true
+    llLabel.translatesAutoresizingMaskIntoConstraints = false
+    llLabel.centerXAnchor.constraint(equalTo: llContainerView.centerXAnchor).isActive = true
+    llLabel.topAnchor.constraint(equalToSystemSpacingBelow: llContainerView.topAnchor, multiplier: 3.0).isActive = true
+    llLabel.widthAnchor.constraint(equalTo: llContainerView.widthAnchor, multiplier: 0.5).isActive = true
+    llLabel.heightAnchor.constraint(equalTo: llContainerView.heightAnchor, multiplier: 0.2).isActive = true
     
-    linkedListSC.translatesAutoresizingMaskIntoConstraints = false
-    linkedListSC.topAnchor.constraint(equalToSystemSpacingBelow: linkedListLabel.bottomAnchor, multiplier: 3.0).isActive = true
-    linkedListSC.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    linkedListSC.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6).isActive = true
+    llSC.translatesAutoresizingMaskIntoConstraints = false
+    llSC.topAnchor.constraint(equalToSystemSpacingBelow: llLabel.bottomAnchor, multiplier: 3.0).isActive = true
+    llSC.centerXAnchor.constraint(equalTo: llContainerView.centerXAnchor).isActive = true
+    llSC.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
     
     treeContainerView.translatesAutoresizingMaskIntoConstraints = false
     treeContainerView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    treeContainerView.topAnchor.constraint(equalToSystemSpacingBelow: linkedListContainerView.bottomAnchor, multiplier: 0.0).isActive = true
+    treeContainerView.topAnchor.constraint(equalToSystemSpacingBelow: llContainerView.bottomAnchor, multiplier: 0.0).isActive = true
     treeContainerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1.0).isActive = true
     treeContainerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2).isActive = true
 
     treeLabel.translatesAutoresizingMaskIntoConstraints = false
-    treeLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    treeLabel.centerXAnchor.constraint(equalTo: treeContainerView.centerXAnchor).isActive = true
     treeLabel.topAnchor.constraint(equalToSystemSpacingBelow: treeContainerView.topAnchor, multiplier: 3.0).isActive = true
     treeLabel.widthAnchor.constraint(equalTo: treeContainerView.widthAnchor, multiplier: 0.5).isActive = true
     treeLabel.heightAnchor.constraint(equalTo: treeContainerView.heightAnchor, multiplier: 0.2).isActive = true
+    
+    treeSC.translatesAutoresizingMaskIntoConstraints = false
+    treeSC.centerXAnchor.constraint(equalTo: treeContainerView.centerXAnchor).isActive = true
+    treeSC.topAnchor.constraint(equalToSystemSpacingBelow: treeLabel.bottomAnchor, multiplier: 3.0).isActive = true
+    treeSC.widthAnchor.constraint(equalTo: treeContainerView.widthAnchor, multiplier: 0.8).isActive = true
     
     generateDSButton.translatesAutoresizingMaskIntoConstraints = false
     generateDSButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true

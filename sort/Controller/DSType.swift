@@ -79,11 +79,11 @@ class DSType: UIViewController {
     let treeRecognizer = UITapGestureRecognizer(target: self, action: #selector(test))
     
     dsTypeView.arrayContainerView.addGestureRecognizer(arrayGestureRecognizer)
-    dsTypeView.linkedListContainerView.addGestureRecognizer(linkedListRecognizer)
+    dsTypeView.llContainerView.addGestureRecognizer(linkedListRecognizer)
     dsTypeView.treeContainerView.addGestureRecognizer(treeRecognizer)
     
     dsTypeView.arrayContainerView.tag = 0
-    dsTypeView.linkedListContainerView.tag = 1
+    dsTypeView.llContainerView.tag = 1
     dsTypeView.treeContainerView.tag = 2
     
     arrayGestureRecognizer.delegate = self
@@ -147,6 +147,13 @@ class DSType: UIViewController {
   @objc func generateDS() {
     print("generateDS")
 
+    
+//    print(MemoryLayout<BST>.size)
+//    print(MemoryLayout<BSTNode>.size)
+//   
+    
+    
+    
     if let ntextFieldValue = Int(dsTypeView.nTextField.text!) {
       
       
