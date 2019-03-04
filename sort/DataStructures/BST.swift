@@ -10,8 +10,7 @@
 // vs separate node / tree classes / nested
 
 
-class BSTNode {
-  
+class BSTNode: Comparable {
   var left: BSTNode?
   var right: BSTNode?
   var value: Int
@@ -19,25 +18,90 @@ class BSTNode {
   init(value: Int) {
     self.value = value
   }
+  
+  static func < (lhs: BSTNode, rhs: BSTNode) -> Bool {
+    return lhs.value < rhs.value
+  }
+  
+  static func == (lhs: BSTNode, rhs: BSTNode) -> Bool {
+    return lhs.value == rhs.value
+  }
+}
+
+
+//struct vs class
+//struct BSTRecursiveIterator: IteratorProtocol {
+//
+//  mutating func next() -> BSTNode? {
+//    let x = BSTNode(value: 5)
+//    return x
+//  }
+//
+//  typealias Element = BSTNode
+//
+//}
+
+extension BSTRecursive: Sequence, IteratorProtocol {
+
+
+  func next() -> BSTNode? {
+    let x = BSTNode(value: 5)
+    return x
+  }
+  
+
+
 }
 
 
 
-class BST {
- var root: BSTNode?
 
-  //search. contains or return/delete
-  
-  //traverse
-  // in-order
-  // pre-order
-  // post-order
-  
-  // delete node
+class BSTRecursive {
   
   
-  //insert keeping append for now for testing
-  func append(value: Int) {
+
+  
+  
+  // Iterator Protocol
+// typealias Element = BSTNode, no need if have return type on next
+
+  
+ 
+  
+  var root: BSTNode?
+  
+  func insert(value: Int) {
+    let node = BSTNode(value: value)
+    
+    if let current = root {
+      insert(root: current, node: node)
+    } else {
+      root = node
+    }
+  }
+  
+  private func insert(root: BSTNode, node: BSTNode) {
+    if node.value <= root.value {
+      if let left = root.left {
+        insert(root: left, node: node)
+      } else {
+        root.left = node
+      }
+    } else {
+      if let right = root.right {
+        insert(root: right, node: node)
+      } else {
+        root.right = node
+      }
+    }
+  }
+}
+
+
+class BSTIterative {
+  var root: BSTNode?
+  
+  func insert(value: Int) {
     let node = BSTNode(value: value)
     
     if var current = root {
@@ -59,10 +123,19 @@ class BST {
     } else {
       root = node
     }
-    
-    //recursive insert
-    
-    
-    
   }
 }
+
+
+
+
+
+//insert keeping append for now for testing
+//search. contains or return/delete
+
+//traverse
+// in-order
+// pre-order
+// post-order
+
+// delete node

@@ -33,19 +33,19 @@ extension DSType: UIPickerViewDelegate, UIPickerViewDataSource {
   
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     return pickerTypes[row]
-
+    
   }
   
   
   // delegate
   
-//  func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-//    <#code#>
-//  }
-//
-//  func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-//    <#code#>
-//  }
+  //  func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+  //    <#code#>
+  //  }
+  //
+  //  func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+  //    <#code#>
+  //  }
   
   
   
@@ -56,12 +56,12 @@ extension DSType: UIPickerViewDelegate, UIPickerViewDataSource {
 
 class DSType: UIViewController {
   
-  var currentDS = BST()
+  var currentDS = BSTRecursive()
   var dsTypeView = DSTypeView()
   var selectedDS = SelectedDataStructure.linkedList
   let pickerTypes = ["Int " + String(MemoryLayout<Int>.size) + "Bytes", "Float" + String(MemoryLayout<Float>.size), "Double" + String(MemoryLayout<Double>.size), "String" + String(MemoryLayout<String>.size)]
-
-
+  
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -89,16 +89,16 @@ class DSType: UIViewController {
     arrayGestureRecognizer.delegate = self
     linkedListRecognizer.delegate = self
     treeRecognizer.delegate = self
- 
+    
     dsTypeView.dataTypePicker.delegate = self
     dsTypeView.dataTypePicker.dataSource = self
-  
+    
   }
   
   @objc func handleDataTypeButtonPress() {
     
     dsTypeView.dataTypePicker.isHidden = false
-
+    
     
     
     
@@ -146,11 +146,11 @@ class DSType: UIViewController {
   
   @objc func generateDS() {
     print("generateDS")
-
     
-//    print(MemoryLayout<BST>.size)
-//    print(MemoryLayout<BSTNode>.size)
-//   
+    
+    //    print(MemoryLayout<BST>.size)
+    //    print(MemoryLayout<BSTNode>.size)
+    //
     
     
     
@@ -161,9 +161,15 @@ class DSType: UIViewController {
       
       
       for _ in 1...ntextFieldValue {
-        print("append")
-        currentDS.append(value: Int.random(in: y))
+        let x = Int.random(in: y)
+        currentDS.insert(value: x)
+        print(x)
       }
+      
+      let x = BSTRecursive()
+//      for i in x {
+//        print("hello")
+//      }
       
       
     } else {
@@ -174,18 +180,18 @@ class DSType: UIViewController {
     
     
     
-//    for i in currentDS {
-//      print(i.value)
-//    }
-//
-//
-//
-//    print(currentDS.isEmpty)
+    //    for i in currentDS {
+    //      print(i.value)
+    //    }
+    //
+    //
+    //
+    //    print(currentDS.isEmpty)
     
-//    print(currentDS[3].value)
-  
-  
-  
+    //    print(currentDS[3].value)
+    
+    
+    
   }
   
   

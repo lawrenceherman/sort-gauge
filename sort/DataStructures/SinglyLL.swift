@@ -26,7 +26,6 @@ class SinglyLLNode<T: Comparable> {
 
 extension SinglyLLNode: Comparable {
   
-  //Equatable
   static func == (lhs: SinglyLLNode<T>, rhs: SinglyLLNode<T>) -> Bool {
     return lhs.value == rhs.value
   }
@@ -36,8 +35,10 @@ extension SinglyLLNode: Comparable {
   }
 }
 
+
+//struct vs class here
 struct SinglyLLIterator<T: Comparable>: IteratorProtocol {
-  typealias Element = SinglyLLNode<T>
+//  typealias Element = SinglyLLNode<T>
 
   var currentNode: Element?
 
