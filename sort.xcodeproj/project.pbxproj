@@ -16,6 +16,7 @@
 		FE9E39EB2218CE0F00D95B63 /* HomeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E39EA2218CE0F00D95B63 /* HomeCVC.swift */; };
 		FE9E39ED2218D61D00D95B63 /* HomeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E39EC2218D61D00D95B63 /* HomeCVCell.swift */; };
 		FEA4CD7821F7F05C006C43C3 /* sortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA4CD7721F7F05C006C43C3 /* sortTests.swift */; };
+		FEBB95D7222EA9BF009A98A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB95D6222EA9BF009A98A5 /* Extensions.swift */; };
 		FED0B75021AA124B005A4380 /* Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0B74F21AA124B005A4380 /* Tester.swift */; };
 		FEF52B08219BAB19002FCBCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF52B07219BAB19002FCBCF /* AppDelegate.swift */; };
 		FEF52B0A219BAB19002FCBCF /* DSType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF52B09219BAB19002FCBCF /* DSType.swift */; };
@@ -48,6 +49,7 @@
 		FEA4CD7521F7F05C006C43C3 /* sortTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sortTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEA4CD7721F7F05C006C43C3 /* sortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortTests.swift; sourceTree = "<group>"; };
 		FEA4CD7921F7F05C006C43C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEBB95D6222EA9BF009A98A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FED0B74F21AA124B005A4380 /* Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tester.swift; sourceTree = "<group>"; };
 		FEF52B04219BAB19002FCBCF /* sort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF52B07219BAB19002FCBCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				FEF52B10219BAB19002FCBCF /* LaunchScreen.storyboard */,
 				FEF52B0E219BAB19002FCBCF /* Assets.xcassets */,
 				FEF52B13219BAB19002FCBCF /* Info.plist */,
+				FEBB95D6222EA9BF009A98A5 /* Extensions.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				FE9E39ED2218D61D00D95B63 /* HomeCVCell.swift in Sources */,
 				FE6BC264222AF74E00241F91 /* BSTEnum.swift in Sources */,
 				FE6BAC65220DA379006355D5 /* BST.swift in Sources */,
+				FEBB95D7222EA9BF009A98A5 /* Extensions.swift in Sources */,
 				FE966BE421EA433100229E74 /* TabBarVC.swift in Sources */,
 				FE96D14221EA593F00D0BC7B /* DSTypeView.swift in Sources */,
 				FED0B75021AA124B005A4380 /* Tester.swift in Sources */,

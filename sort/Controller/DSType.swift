@@ -70,7 +70,7 @@ class DSType: UIViewController {
     
     navigationController?.navigationBar.isTranslucent = false
     
-    dsTypeView.generateDSButton.addTarget(self, action: #selector(generateDS), for: .touchUpInside)
+    dsTypeView.analyzeDSButton.addTarget(self, action: #selector(generateDS), for: .touchUpInside)
     
     dsTypeView.dataTypeButton.addTarget(self, action: #selector(handleDataTypeButtonPress), for: .allTouchEvents)
     

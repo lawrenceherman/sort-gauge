@@ -37,8 +37,7 @@ class DSTypeView: UIView {
   
   let arrayContainerView: UIView = {
     let view = UIView()
-    view.backgroundColor = .purple
-    view.isHidden = false
+    view.addColor1Border()
     return view
   }()
   
@@ -47,6 +46,12 @@ class DSTypeView: UIView {
     label.text = "Array"
     label.textAlignment = .center
     return label
+  }()
+  
+  let arraySC: UISegmentedControl = {
+    let segementedControl = UISegmentedControl(items: ["Self Allocating", "Reserved Capacity"])
+    segementedControl.selectedSegmentIndex = 0
+    return segementedControl
   }()
   
   let llContainerView: UIView = {
@@ -87,11 +92,11 @@ class DSTypeView: UIView {
     return label
   }()
   
-  let generateDSButton: UIButton = {
+  let analyzeDSButton: UIButton = {
     let button = UIButton()
     button.backgroundColor = .purple
     button.setTitleColor(.black, for: .normal)
-    button.setTitle("Test", for: .normal)
+    button.setTitle("Generate Analysis", for: .normal)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
@@ -101,8 +106,8 @@ class DSTypeView: UIView {
     
     addSubviews()
     setConstraints()
-    
-    backgroundColor = .brown
+//
+    backgroundColor = .white
   }
   
   func addSubviews() {
@@ -114,7 +119,8 @@ class DSTypeView: UIView {
 
     addSubview(arrayContainerView)
     arrayContainerView.addSubview(arrayLabel)
-    addSubview(generateDSButton)
+    arrayContainerView.addSubview(arraySC)
+ 
     
     addSubview(llContainerView)
     llContainerView.addSubview(llLabel)
@@ -123,6 +129,8 @@ class DSTypeView: UIView {
     addSubview(treeContainerView)
     treeContainerView.addSubview(treeLabel)
     treeContainerView.addSubview(treeSC)
+    
+    addSubview(analyzeDSButton)
   }
   
   func setConstraints() {
@@ -155,6 +163,12 @@ class DSTypeView: UIView {
     arrayLabel.topAnchor.constraint(equalToSystemSpacingBelow: arrayContainerView.topAnchor, multiplier: 3.0).isActive = true
     arrayLabel.widthAnchor.constraint(equalTo: arrayContainerView.widthAnchor, multiplier: 0.5).isActive = true
     arrayLabel.heightAnchor.constraint(equalTo: arrayContainerView.heightAnchor, multiplier: 0.2).isActive = true
+    
+    arraySC.translatesAutoresizingMaskIntoConstraints = false
+    arraySC.centerXAnchor.constraint(equalTo: arrayContainerView.centerXAnchor).isActive = true
+    arraySC.topAnchor.constraint(equalToSystemSpacingBelow: arrayLabel.bottomAnchor, multiplier: 3.0).isActive = true
+    arraySC.widthAnchor.constraint(equalTo: arrayContainerView.widthAnchor, multiplier: 0.6).isActive = true
+
     
     llContainerView.translatesAutoresizingMaskIntoConstraints = false
     llContainerView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -190,15 +204,13 @@ class DSTypeView: UIView {
     treeSC.topAnchor.constraint(equalToSystemSpacingBelow: treeLabel.bottomAnchor, multiplier: 3.0).isActive = true
     treeSC.widthAnchor.constraint(equalTo: treeContainerView.widthAnchor, multiplier: 0.8).isActive = true
     
-    generateDSButton.translatesAutoresizingMaskIntoConstraints = false
-    generateDSButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    generateDSButton.bottomAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.bottomAnchor, multiplier: -20.0).isActive = true
-    generateDSButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
-    generateDSButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1).isActive = true
+    analyzeDSButton.translatesAutoresizingMaskIntoConstraints = false
+    analyzeDSButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    analyzeDSButton.bottomAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.bottomAnchor, multiplier: -20.0).isActive = true
+    analyzeDSButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
+    analyzeDSButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1).isActive = true
     
   }
-  
-  
   
   
   required init?(coder aDecoder: NSCoder) {
