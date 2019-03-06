@@ -165,24 +165,18 @@ class DSType: UIViewController {
         currentDS.insert(value: x)
         print(x)
       }
-      
-      let x = BSTRecursive()
-//      for i in x {
-//        print("hello")
-//      }
-      
+
       
     } else {
       print("Enter a value for n")
       //alert
     }
     
+  
     
-    
-    
-    //    for i in currentDS {
-    //      print(i.value)
-    //    }
+//        for i in currentDS {
+//          print(i.value)
+//        }
     //
     //
     //

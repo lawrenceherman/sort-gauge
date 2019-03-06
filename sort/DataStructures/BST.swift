@@ -14,72 +14,95 @@ class BSTNode: Comparable {
   var left: BSTNode?
   var right: BSTNode?
   var value: Int
-  
+
   init(value: Int) {
     self.value = value
   }
-  
+
   static func < (lhs: BSTNode, rhs: BSTNode) -> Bool {
     return lhs.value < rhs.value
   }
-  
+
   static func == (lhs: BSTNode, rhs: BSTNode) -> Bool {
     return lhs.value == rhs.value
   }
 }
 
-
-//struct vs class
-//struct BSTRecursiveIterator: IteratorProtocol {
 //
-//  mutating func next() -> BSTNode? {
-//    let x = BSTNode(value: 5)
-//    return x
+//struct SinglyLLIterator<T: Comparable>: IteratorProtocol {
+//  //  typealias Element = SinglyLLNode<T>
+//
+//  var currentNode: Element?
+//
+//  init(startNode: Element?) {
+//    print("iterator protocol init")
+//    currentNode = startNode
 //  }
 //
-//  typealias Element = BSTNode
+//  mutating func next() -> SinglyLLNode<T>? {
+//    print("next")
+//    let node = currentNode
+//    currentNode = currentNode?.next
+//    return node
+//  }
+//}
 //
+//
+//// check memory for Struc SinglyLL
+//extension SinglyLL: Sequence {
+//  typealias Iterator = SinglyLLIterator<T>
+//
+//  func makeIterator() -> SinglyLLIterator<T> {
+//    print("make iterator")
+//    return SinglyLLIterator(startNode: head)
+//  }
 //}
 
-extension BSTRecursive: Sequence, IteratorProtocol {
 
+struct BSTIterator: IteratorProtocol {
 
-  func next() -> BSTNode? {
-    let x = BSTNode(value: 5)
-    return x
+  var current: BSTNode?
+  
+  init(startNode: BSTNode?) {
+    current = startNode
   }
   
-
-
+  mutating func next() -> BSTNode? {
+    let node = current
+    current = node?.left
+    return node
+  
+  }
+  
+  
+}
+extension BSTRecursive: Sequence {
+  
+  func makeIterator() -> BSTIterator {
+    return BSTIterator(startNode: root)
+  }
+  
 }
 
 
 
-
 class BSTRecursive {
-  
-  
 
-  
-  
   // Iterator Protocol
 // typealias Element = BSTNode, no need if have return type on next
 
-  
- 
-  
-  var root: BSTNode?
-  
+  fileprivate var root: BSTNode?
+
   func insert(value: Int) {
     let node = BSTNode(value: value)
-    
+
     if let current = root {
       insert(root: current, node: node)
     } else {
       root = node
     }
   }
-  
+
   private func insert(root: BSTNode, node: BSTNode) {
     if node.value <= root.value {
       if let left = root.left {
@@ -98,23 +121,25 @@ class BSTRecursive {
 }
 
 
+
+
 class BSTIterative {
-  var root: BSTNode?
-  
+  fileprivate var root: BSTNode?
+
   func insert(value: Int) {
     let node = BSTNode(value: value)
-    
+
     if var current = root {
       // try with while let
       while (current.left != nil && value <= current.value) || (current.right != nil && value > current.value) {
-        
+
         if value <= current.value {
           current = current.left!
         } else if value > current.value {
           current = current.right!
         }
       }
-      
+
       if value <= current.value {
         current.left = node
       } else {

@@ -24,16 +24,7 @@ class SinglyLLNode<T: Comparable> {
   }
 }
 
-extension SinglyLLNode: Comparable {
-  
-  static func == (lhs: SinglyLLNode<T>, rhs: SinglyLLNode<T>) -> Bool {
-    return lhs.value == rhs.value
-  }
-  
-  static func < (lhs: SinglyLLNode<T>, rhs: SinglyLLNode<T>) -> Bool {
-    return lhs.value < rhs.value
-  }
-}
+
 
 
 //struct vs class here
@@ -67,7 +58,7 @@ extension SinglyLL: Sequence {
 }
 
 
-//struct or class
+//struct or class?
 struct SinglyLL<T: Comparable> {
   // first
   var head: SinglyLLNode<T>?
@@ -143,6 +134,8 @@ struct SinglyLL<T: Comparable> {
 //  }
   
 }
+
+
 
 // swift extension Array: RandomAccessCollection, MutableCollection
 

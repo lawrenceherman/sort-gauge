@@ -6,81 +6,59 @@
 //  Copyright © 2019 Lawrence Herman. All rights reserved.
 //
 
-//
-//class BSTNested {
-//
-//  private var root: Node?
-
-//  func insert(value: Int) {
-//    let node = Node(value: value)
-//    if let root = self.root {
-//      Node.insertRecursive(root: root, node: node)
-//
-//    } else {
-//      self.root = node
-//    }
-//  }
+class BSTRecursiveNestedNode {
   
+  // Iterator Protocol
+  // typealias Element = BSTNode, no need if have return type on next
   
-//  private class Node {
-//    var parent: Node?
-//    var left: Node?
-//    var right: Node?
-//    var value: Int
-//
-//    init(value: Int) {
-//      self.value = value
-//    }
-//
+  private var root: Node?
+  
+  private class Node: Comparable {
+    var left: Node?
+    var right: Node?
+    var value: Int
+    
+    init(value: Int) {
+      self.value = value
+    }
+    
+    static func < (lhs: Node, rhs: Node) -> Bool {
+      return lhs.value < rhs.value
+    }
+    
+    static func == (lhs: Node, rhs: Node) -> Bool {
+      return lhs.value == rhs.value
+    }
+  }
+  
+  func insert(value: Int) {
+    let node = Node(value: value)
+    
+    if let current = root {
+      insert(root: current, node: node)
+    } else {
+      root = node
+    }
+  }
+  
+  private func insert(root: Node, node: Node) {
+    if node.value <= root.value {
+      if let left = root.left {
+        insert(root: left, node: node)
+      } else {
+        root.left = node
+      }
+    } else {
+      if let right = root.right {
+        insert(root: right, node: node)
+      } else {
+        root.right = node
+      }
+    }
+  }
+}
 
-    
-//    func insertRecursive(root: Node, node: Node) {
-//
-//      if value <= self.value {
-//        if let current = left {
-//          current.insertRecursive(root: current, node: node)
-//        } else {
-//          left = Node(value: value)
-//          left?.parent = self
-//        }
-//      } else {
-//        if let current = right {
-//          current.insertRecursive(root: current)
-//        } else {
-//          right = Node(value: value)
-//          right?.parent = self
-//        }
-//      }
-//    }
-    
 
-    
-//    insert keeping append for now for testing
-//    func insertLooping(value: Int) {
-//      let node = Node(value: value)
-//
-//      if var current = root {
-//        // try with while let
-//        while (current.left != nil && value <= current.value) || (current.right != nil && value > current.value) {
-//
-//          if value <= current.value {
-//            current = current.left!
-//          } else if value > current.value {
-//            current = current.right!
-//          }
-//        }
-//
-//        if value <= current.value {
-//          current.left = node
-//        } else {
-//          current.right = node
-//        }
-//      } else {
-//        root = node
-//      }
-//
-//    }
-//}
 
 
 
