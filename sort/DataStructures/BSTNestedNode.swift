@@ -6,11 +6,7 @@
 //  Copyright © 2019 Lawrence Herman. All rights reserved.
 //
 
-class BSTRecursiveNestedNode {
-  
-  // Iterator Protocol
-  // typealias Element = BSTNode, no need if have return type on next
-  
+public class BSTRecursiveNestedNode {
   private var root: Node?
   
   private class Node: Comparable {
@@ -22,6 +18,7 @@ class BSTRecursiveNestedNode {
       self.value = value
     }
     
+    // theres a way to split this out when conforming to collection
     static func < (lhs: Node, rhs: Node) -> Bool {
       return lhs.value < rhs.value
     }
@@ -59,7 +56,52 @@ class BSTRecursiveNestedNode {
 }
 
 
+public class BSTIterativeNestedNode {
+  
+  private class Node: Comparable {
+    var left: Node?
+    var right: Node?
+    var value: Int
+    
+    init(value: Int) {
+      self.value = value
+    }
+    
+    static func < (lhs: Node, rhs: Node) -> Bool {
+      return lhs.value < rhs.value
+    }
+    
+    static func == (lhs: Node, rhs: Node) -> Bool {
+      return lhs.value == rhs.value
+    }
+  }
 
+  private var root: Node?
+  
+  func insert(value: Int) {
+    let node = Node(value: value)
+    
+    if var current = root {
+      // try with while let
+      while (current.left != nil && value <= current.value) || (current.right != nil && value > current.value) {
+        
+        if value <= current.value {
+          current = current.left!
+        } else if value > current.value {
+          current = current.right!
+        }
+      }
+      
+      if value <= current.value {
+        current.left = node
+      } else {
+        current.right = node
+      }
+    } else {
+      root = node
+    }
+  }
+}
 
 
 

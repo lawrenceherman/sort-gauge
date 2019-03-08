@@ -10,36 +10,16 @@
 
 
 
-//class BinaryTree<T: Comparable & CustomStringConvertible> {
-//
-//  private var rootNode: TreeNode<T>?
-//
-//  func insert(element: T) {
-//    let node = TreeNode(data: element)
-//    if let rootNode = self.rootNode {
-//      self.insert(rootNode, node)
-//    } else {
-//      self.rootNode = node
-//    }
-//  }
-//
-//  // RECURSIVE FUNCTION
-//  private func insert(_ rootNode: TreeNode<T>, _ node: TreeNode<T>) {
-//    if rootNode.data > node.data {
-//      if let leftNode = rootNode.leftNode {
-//        self.insert(leftNode, node)
-//      } else {
-//        rootNode.leftNode = node
-//      }
-//    } else {
-//      if let rightNode = rootNode.rightNode {
-//        self.insert(rightNode, node)
-//      } else {
-//        rootNode.rightNode = node
-//      }
-//    }
-//  }
-//}
+
+
+
+
+
+
+
+
+
+
 
 //extension BinaryTree {
 //

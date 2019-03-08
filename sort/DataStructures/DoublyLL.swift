@@ -8,9 +8,10 @@
 
 // class DoublyLLNode<T> where T: Equatable {
 class DoublyLLNode<T: Comparable> {
+  var value: T
   var next: DoublyLLNode?
   var previous: DoublyLLNode?
-  var value: T
+ 
   
   init(value: T) {
     self.value = value

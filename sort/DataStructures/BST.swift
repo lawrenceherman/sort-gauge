@@ -10,6 +10,9 @@
 // vs separate node / tree classes / nested
 
 
+//tried a number of ways to make this class private / fileprivate but always ran into problem
+// when conforming to sequence / Iterator protocol
+
 class BSTNode: Comparable {
   var left: BSTNode?
   var right: BSTNode?
@@ -28,70 +31,37 @@ class BSTNode: Comparable {
   }
 }
 
-//
-//struct SinglyLLIterator<T: Comparable>: IteratorProtocol {
-//  //  typealias Element = SinglyLLNode<T>
-//
-//  var currentNode: Element?
-//
-//  init(startNode: Element?) {
-//    print("iterator protocol init")
-//    currentNode = startNode
-//  }
-//
-//  mutating func next() -> SinglyLLNode<T>? {
-//    print("next")
-//    let node = currentNode
-//    currentNode = currentNode?.next
-//    return node
-//  }
-//}
-//
-//
-//// check memory for Struc SinglyLL
-//extension SinglyLL: Sequence {
-//  typealias Iterator = SinglyLLIterator<T>
-//
-//  func makeIterator() -> SinglyLLIterator<T> {
-//    print("make iterator")
-//    return SinglyLLIterator(startNode: head)
-//  }
-//}
-
 
 struct BSTIterator: IteratorProtocol {
-
   var current: BSTNode?
-  
+
   init(startNode: BSTNode?) {
     current = startNode
   }
-  
-  mutating func next() -> BSTNode? {
+
+  // not implemented correctly yet
+  mutating func next() -> Int? {
     let node = current
     current = node?.left
-    return node
-  
+    return node?.value
   }
-  
-  
 }
+
 extension BSTRecursive: Sequence {
-  
   func makeIterator() -> BSTIterator {
     return BSTIterator(startNode: root)
   }
-  
+}
+
+extension BSTIterative: Sequence {
+  func makeIterator() -> BSTIterator {
+    return BSTIterator(startNode: root)
+  }
 }
 
 
-
 class BSTRecursive {
-
-  // Iterator Protocol
-// typealias Element = BSTNode, no need if have return type on next
-
-  fileprivate var root: BSTNode?
+  private var root: BSTNode?
 
   func insert(value: Int) {
     let node = BSTNode(value: value)
@@ -121,10 +91,8 @@ class BSTRecursive {
 }
 
 
-
-
 class BSTIterative {
-  fileprivate var root: BSTNode?
+  private var root: BSTNode?
 
   func insert(value: Int) {
     let node = BSTNode(value: value)
