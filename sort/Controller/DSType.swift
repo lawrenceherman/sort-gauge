@@ -95,11 +95,17 @@ class DSType: UIViewController {
     
   }
   
+  lazy var dataPickerLauncher: DataPickerLauncher = {
+      let launcher = DataPickerLauncher()
+      launcher.displayingController = self
+      return launcher
+  }()
+  
   @objc func handleDataTypeButtonPress() {
     
-    dsTypeView.dataTypePicker.isHidden = false
+//    dsTypeView.dataTypePicker.isHidden = false
     
-    
+    dataPickerLauncher.showPicker()
     
     
     
